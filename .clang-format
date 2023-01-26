@@ -1,0 +1,10 @@
+---
+Language:        Cpp
+BasedOnStyle:  Chromium
+
+UseTab: Never
+IndentWidth: 4
+AllowShortFunctionsOnASingleLine: Empty
+
+ColumnLimit: 140
+MaxEmptyLinesToKeep: 2
