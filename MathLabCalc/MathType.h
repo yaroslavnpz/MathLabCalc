@@ -2,6 +2,7 @@
 #include <cmath>
 #include <complex>
 #include <variant>
+#include <functional>
 
 
 namespace calc {
@@ -15,12 +16,14 @@ class List;
 class Seg;
 class Quad;
 
-using MathType = std::variant<Error, Bool>;
+
+typedef std::variant<Error, Bool> MathType;
 
 
 class Error {
    private:
     bool _val = false;
+
    public:
     Error() noexcept = default;
 
@@ -32,9 +35,8 @@ class Error {
 class Bool {
    private:
     bool data = false;
+
    public:
-
-
     Bool() noexcept = default;
 
 
@@ -48,16 +50,16 @@ class Bool {
 };
 
 
-template<typename Ty1, typename Ty2>
-const MathType operator+(const Ty1& a, const Ty2& b) noexcept {
-    return Error();
-}
-
-
-
 const MathType operator+(const Bool& a, const Bool& b) noexcept;
 
 
-
-
 }  // namespace calc
+
+
+#include "for_sfinae.inl"
+
+#if ((__cplusplus >= 202002L) || (_MSVC_LANG >= 202002L))
+#include "for_c_20_math_type.inl"
+#else
+#include "for_c_17_math_type.inl"
+#endif

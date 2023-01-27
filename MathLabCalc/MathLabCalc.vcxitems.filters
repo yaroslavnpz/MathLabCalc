@@ -9,10 +9,21 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)MathType.h">
       <Filter>MathType</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)for_c_17_math_type.inl">
+      <Filter>MathType</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)for_sfinae.inl">
+      <Filter>MathType</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp">
       <Filter>MathType</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)for_c_20_math_type.inl">
+      <Filter>MathType</Filter>
+    </None>
   </ItemGroup>
 </Project>
