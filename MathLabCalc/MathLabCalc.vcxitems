@@ -14,9 +14,16 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)for_c_17_math_type.inl" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MathType.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)for_sfinae.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)for_c_20_math_type.inl" />
   </ItemGroup>
 </Project>
