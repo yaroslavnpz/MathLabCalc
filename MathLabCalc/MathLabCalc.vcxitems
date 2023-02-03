@@ -14,7 +14,8 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)BaseMathTypes.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Bool.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Int.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h" />
   </ItemGroup>
 </Project>

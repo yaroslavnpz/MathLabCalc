@@ -1,5 +1,5 @@
 #pragma once
-#include "BaseMathTypes.h"
+#include "Int.h"
 
 
 namespace calc {
@@ -7,14 +7,13 @@ namespace calc {
 
 class Ratio {
    private:
-    Int x = 0, y = 1;
+    long long x = 0, y = 1;
 
 
-    static const Int gcd(Int a, Int b) noexcept;
+    static const long long gcd(long long a, long long b) noexcept;
 
 
     void optimize();
-
 
    public:
     Ratio() noexcept = default;
@@ -26,31 +25,40 @@ class Ratio {
     Ratio& operator=(Ratio&&) noexcept = default;
 
 
-    Ratio(const Int x, const int y) noexcept;
+    Ratio(long long x, long long y);
+
+
+    Ratio(const Int& val) noexcept;
+
+
+    operator std::wstring() const;
+
+
+    const long long getX() const noexcept;
+    const long long getY() const noexcept;
+
+
+    const double getDouble() const noexcept;
+
+
+    const MathType convert() const noexcept;
 
 
     const Ratio operator+() const noexcept;
     const Ratio operator-() const noexcept;
 
-    const Ratio operator+(const Ratio& val) const noexcept;
-    const Ratio operator-(const Ratio& val) const noexcept;
-    const Ratio operator*(const Ratio& val) const noexcept;
-    const Ratio operator/(const Ratio& val) const noexcept;
+
+    const Ratio operator+(const Ratio& val) const;
+    const Ratio operator-(const Ratio& val) const;
+    const Ratio operator*(const Ratio& val) const;
+    const Ratio operator/(const Ratio& val) const;
 
 
-    const bool operator==(const Ratio& val) const noexcept;
-
-
-#if IS_CPP20
-
-    const auto operator<=>(const Ratio& val) const noexcept;
-
-#else
-
-    // Нужно добавить функции
-
-#endif
+    const bool operator==(const Ratio& val) const;
+    const bool operator!=(const Ratio& val) const;
+    const bool operator<(const Ratio& val) const;
+    const bool operator<=(const Ratio& val) const;
+    const bool operator>(const Ratio& val) const;
+    const bool operator>=(const Ratio& val) const;
 };
-
-
 }  // namespace calc

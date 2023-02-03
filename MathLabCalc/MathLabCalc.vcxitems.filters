@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="MathType">
+      <UniqueIdentifier>{78c6cb6e-148d-427f-8b8f-59494958f928}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Bool.h">
+      <Filter>MathType</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Int.h">
+      <Filter>MathType</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h">
+      <Filter>MathType</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

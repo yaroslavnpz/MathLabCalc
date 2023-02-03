@@ -1,5 +1,9 @@
 #include <iostream>
+#include "Ratio.h"
+
+using namespace calc;
 
 int main() {
-    std::cout << "Hello World!\n";
+    Ratio a, b;
+    Int c, d;
 }
