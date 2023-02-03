@@ -15,5 +15,13 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h">
       <Filter>MathType</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Float.h">
+      <Filter>MathType</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp">
+      <Filter>MathType</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

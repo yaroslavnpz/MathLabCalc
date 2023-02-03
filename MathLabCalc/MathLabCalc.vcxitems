@@ -15,7 +15,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Bool.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Float.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Int.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp" />
   </ItemGroup>
 </Project>
