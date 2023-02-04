@@ -18,5 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)BaseMathTypes.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)List.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Seg.h" />
   </ItemGroup>
 </Project>

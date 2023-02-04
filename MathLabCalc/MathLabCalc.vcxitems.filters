@@ -17,5 +17,11 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)BaseMathTypes.h">
       <Filter>MathType</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Seg.h">
+      <Filter>MathType</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)List.h">
+      <Filter>MathType</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
