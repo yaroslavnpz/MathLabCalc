@@ -32,6 +32,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		MathLabCalc\MathLabCalc.vcxitems*{37e5fa34-a549-43e8-beef-0d0fcd4ebe56}*SharedItemsImports = 9
-		MathLabCalc\MathLabCalc.vcxitems*{955ca23c-054c-433c-bb26-a55739432224}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal

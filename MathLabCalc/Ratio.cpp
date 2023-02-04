@@ -1,5 +1,5 @@
-#include "Ratio.h"
-
+// #include "Ratio.h"
+/*
 
 namespace calc {
 
@@ -28,3 +28,4 @@ Ratio::Ratio(long long x, long long y) : x(x), y(y) {
 Ratio::Ratio(const Int& val) noexcept :x(val.getInt()), y(1) {}
 
 }  // namespace calc
+*/

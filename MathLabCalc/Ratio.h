@@ -25,13 +25,15 @@ class Ratio {
     Ratio& operator=(Ratio&&) noexcept = default;
 
 
-    Ratio(long long x, long long y);
+    Ratio(long long x, long long y) : x(x), y(y) {
+        optimize();
+    }
 
 
     Ratio(const Int& val) noexcept;
 
 
-    operator std::wstring() const;
+    //operator std::wstring() const;
 
 
     const long long getX() const noexcept;

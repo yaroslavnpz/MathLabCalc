@@ -13,56 +13,72 @@ class Int {
    private:
     long long data = 0;
 
-    public:
+   public:
     Int() noexcept = default;
-     Int(const Int&) noexcept = default;
+    Int(const Int&) noexcept = default;
     Int(Int&&) noexcept = default;
-     ~Int() noexcept = default;
+    ~Int() noexcept = default;
 
-     Int& operator=(const Int&) noexcept = default;
-     Int& operator=(Int&&) noexcept = default;
-
-
-     Int(const long long val) noexcept;
+    Int& operator=(const Int&) noexcept = default;
+    Int& operator=(Int&&) noexcept = default;
 
 
-     operator std::wstring() const;
+    Int(const long long val) noexcept : data(val) {}
+
+    /*
+    operator std::wstring() const {
+        return std::to_wstring(data);
+    }
 
 
-     static const bool gen(const std::wstring& str, MathType& val);
+    static const bool gen(const std::wstring& str, MathType& val);
+    */
+
+    const long long getInt() const noexcept {
+        return data;
+    }
 
 
-     const long long getInt() const noexcept;
+    const Int operator+() const noexcept {
+        return *this;
+    }
+    const Int operator-() const noexcept {
+        return -data;
+    }
+    const Int operator~() const noexcept {
+        return ~data;
+    }
 
 
-     const Int operator+() const noexcept;
-     const Int operator-() const noexcept;
-     const Int operator~() const noexcept;
+    const Int operator+(const Int& val) const noexcept {
+        return data + val.data;
+    }
+    const Int operator-(const Int& val) const noexcept {
+        return data - val.data;
+    }
+    const Int operator*(const Int& val) const noexcept {
+        return data * val.data;
+    }
 
 
-     const Int operator+(const Int& val) const noexcept;
-     const Int operator-(const Int& val) const noexcept;
-     const Int operator*(const Int& val) const noexcept;
+    const Int intDiv(const Int& val) const;
+    const Int operator%(const Int& val) const;
+
+    const MathType operator/(const Int& val) const;
 
 
-     const Int intDiv(const Int& val) const;
-     const Int operator%(const Int& val) const;
-
-     const MathType operator/(const Int& val) const;
-
-
-     const Int operator|(const Int& val) const noexcept;
-     const Int operator&(const Int& val) const noexcept;
-     const Int operator^(const Int& val) const noexcept;
-     const Int operator<<(const Int& val) const noexcept;
-     const Int operator>>(const Int& val) const noexcept;
+    const Int operator|(const Int& val) const noexcept;
+    const Int operator&(const Int& val) const noexcept;
+    const Int operator^(const Int& val) const noexcept;
+    const Int operator<<(const Int& val) const noexcept;
+    const Int operator>>(const Int& val) const noexcept;
 
 
-     const bool operator==(const Int& val) const noexcept;
-     const bool operator!=(const Int& val) const noexcept;
-     const bool operator<(const Int& val) const noexcept;
-     const bool operator<=(const Int& val) const noexcept;
-     const bool operator>(const Int& val) const noexcept;
-     const bool operator>=(const Int& val) const noexcept;
+    const bool operator==(const Int& val) const noexcept;
+    const bool operator!=(const Int& val) const noexcept;
+    const bool operator<(const Int& val) const noexcept;
+    const bool operator<=(const Int& val) const noexcept;
+    const bool operator>(const Int& val) const noexcept;
+    const bool operator>=(const Int& val) const noexcept;
 };
-}
+}  // namespace calc

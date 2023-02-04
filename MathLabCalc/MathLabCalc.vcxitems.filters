@@ -5,23 +5,4 @@
       <UniqueIdentifier>{78c6cb6e-148d-427f-8b8f-59494958f928}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Bool.h">
-      <Filter>MathType</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Int.h">
-      <Filter>MathType</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h">
-      <Filter>MathType</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Float.h">
-      <Filter>MathType</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp">
-      <Filter>MathType</Filter>
-    </ClCompile>
-  </ItemGroup>
 </Project>
