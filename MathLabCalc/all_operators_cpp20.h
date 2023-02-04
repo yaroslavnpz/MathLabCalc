@@ -2,7 +2,7 @@
 #include "Bool.h"
 #include "Complex.h"
 
-
+/*
 namespace calc {
 
 
@@ -76,3 +76,4 @@ const Ty2 operator+(const Ty1& a, const Ty2& b) {
 }
 
 }  // namespace calc
+*/

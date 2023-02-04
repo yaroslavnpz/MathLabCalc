@@ -13,4 +13,11 @@
   <ItemGroup>
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)all_operators_cpp20.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)BaseMathTypes.h" />
+  </ItemGroup>
 </Project>

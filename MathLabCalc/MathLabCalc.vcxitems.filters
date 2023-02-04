@@ -4,5 +4,21 @@
     <Filter Include="MathType">
       <UniqueIdentifier>{78c6cb6e-148d-427f-8b8f-59494958f928}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4732f300-b0f5-4bbc-a456-0d3ba0cec93f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)all_operators_cpp20.h">
+      <Filter>MathType</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BaseMathTypes.h">
+      <Filter>MathType</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

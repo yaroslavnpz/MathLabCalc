@@ -7,6 +7,12 @@
 using namespace std;
 
 
+#include "BaseMathTypes.h"
+
+
 int main() {
     cout << "Hello";
+
+    calc::Int a, b;
+
 }
