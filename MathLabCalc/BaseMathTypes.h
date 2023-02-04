@@ -1,7 +1,7 @@
 #pragma once
 #include <cmath>
-#include <string>
 #include <complex>
+#include <string>
 
 
 namespace calc {
@@ -84,78 +84,103 @@ class Bool {
 };
 
 
-
 class Int {
    private:
     long long data = 0;
 
    public:
-    Int() noexcept = default;
-    Int(const Int&) noexcept = default;
-    Int(Int&&) noexcept = default;
+    constexpr Int() noexcept = default;
+    constexpr Int(const Int&) noexcept = default;
+    constexpr Int(Int&&) noexcept = default;
     ~Int() noexcept = default;
 
-    Int& operator=(const Int&) noexcept = default;
-    Int& operator=(Int&&) noexcept = default;
+    constexpr Int& operator=(const Int&) noexcept = default;
+    constexpr Int& operator=(Int&&) noexcept = default;
 
 
-    Int(const long long val) noexcept : data(val) {}
+    constexpr Int(const long long val) noexcept : data(val) {}
 
-    /*
+
     operator std::wstring() const {
         return std::to_wstring(data);
     }
 
 
     static const bool gen(const std::wstring& str, MathType& val);
-    */
 
-    const long long getInt() const noexcept {
+
+    constexpr const long long getInt() const noexcept {
         return data;
     }
 
 
-    const Int operator+() const noexcept {
+    constexpr const Int operator+() const noexcept {
         return *this;
     }
-    const Int operator-() const noexcept {
+    constexpr const Int operator-() const noexcept {
         return -data;
     }
-    const Int operator~() const noexcept {
+    constexpr const Int operator~() const noexcept {
         return ~data;
     }
 
 
-    const Int operator+(const Int& val) const noexcept {
+    constexpr const Int operator+(const Int& val) const noexcept {
         return data + val.data;
     }
-    const Int operator-(const Int& val) const noexcept {
+    constexpr const Int operator-(const Int& val) const noexcept {
         return data - val.data;
     }
-    const Int operator*(const Int& val) const noexcept {
+    constexpr const Int operator*(const Int& val) const noexcept {
         return data * val.data;
     }
 
 
-    const Int intDiv(const Int& val) const;
-    const Int operator%(const Int& val) const;
+    constexpr const Int intDiv(const Int& val) const {
+        return data / val.data;
+    }
+    constexpr const Int operator%(const Int& val) const {
+        return data % val.data;
+    }
 
     const MathType operator/(const Int& val) const;
 
 
-    const Int operator|(const Int& val) const noexcept;
-    const Int operator&(const Int& val) const noexcept;
-    const Int operator^(const Int& val) const noexcept;
-    const Int operator<<(const Int& val) const noexcept;
-    const Int operator>>(const Int& val) const noexcept;
+    constexpr const Int operator|(const Int& val) const noexcept {
+        return data | val.data;
+    }
+    constexpr const Int operator&(const Int& val) const noexcept {
+        return data & val.data;
+    }
+    constexpr const Int operator^(const Int& val) const noexcept {
+        return data ^ val.data;
+    }
+    constexpr const Int operator<<(const Int& val) const noexcept {
+        return data << val.data;
+    }
+    constexpr const Int operator>>(const Int& val) const noexcept {
+        return data >> val.data;
+    }
 
 
-    const bool operator==(const Int& val) const noexcept;
-    const bool operator!=(const Int& val) const noexcept;
-    const bool operator<(const Int& val) const noexcept;
-    const bool operator<=(const Int& val) const noexcept;
-    const bool operator>(const Int& val) const noexcept;
-    const bool operator>=(const Int& val) const noexcept;
+    constexpr const bool operator==(const Int& val) const noexcept {
+        return data == val.data;
+    }
+    constexpr const bool operator!=(const Int& val) const noexcept {
+        return data != val.data;
+    }
+    constexpr const bool operator<(const Int& val) const noexcept {
+        return data < val.data;
+    }
+    constexpr const bool operator<=(const Int& val) const noexcept {
+        return data <= val.data;
+    }
+    constexpr const bool operator>(const Int& val) const noexcept {
+        return data > val.data;
+    }
+    constexpr const bool operator>=(const Int& val) const noexcept {
+        return data >= val.data;
+    }
 };
 
 
@@ -164,44 +189,70 @@ class Ratio {
     long long x = 0, y = 1;
 
 
-    static const long long gcd(long long a, long long b) noexcept;
+    constexpr static const long long gcd(long long a, long long b) noexcept {
+        while (b != 0) {
+            a %= b;
+            std::swap(a, b);
+        }
+        return a;
+    }
 
 
-    void optimize();
+    constexpr void optimize() {
+        if (y == 0)
+            throw -1;
+        if (y < 0)
+            x = -x, y = -y;
+        auto d = gcd(abs(x), y);
+        x /= d;
+        y /= d;
+    }
 
    public:
-    Ratio() noexcept = default;
-    Ratio(const Ratio&) noexcept = default;
-    Ratio(Ratio&&) noexcept = default;
+    constexpr Ratio() noexcept = default;
+    constexpr Ratio(const Ratio&) noexcept = default;
+    constexpr Ratio(Ratio&&) noexcept = default;
     ~Ratio() noexcept = default;
 
-    Ratio& operator=(const Ratio&) noexcept = default;
-    Ratio& operator=(Ratio&&) noexcept = default;
+    constexpr Ratio& operator=(const Ratio&) noexcept = default;
+    constexpr Ratio& operator=(Ratio&&) noexcept = default;
 
 
-    Ratio(long long x, long long y) : x(x), y(y) {
+    constexpr Ratio(long long x, long long y) : x(x), y(y) {
         optimize();
     }
 
 
-    Ratio(const Int& val) noexcept;
+    constexpr Ratio(const Int& val) noexcept : x(val.getInt()), y(1) {}
 
 
-    // operator std::wstring() const;
+    operator std::wstring() const {
+        return std::to_wstring(getDouble());
+    }
 
 
-    const long long getX() const noexcept;
-    const long long getY() const noexcept;
+    constexpr const long long getNumerator() const noexcept {
+        return x;
+    }
+    constexpr const long long getDenominator() const noexcept {
+        return y;
+    }
 
 
-    const double getDouble() const noexcept;
+    constexpr const double getDouble() const noexcept {
+        return double(x) / double(y);
+    }
 
 
     const MathType convert() const noexcept;
 
 
-    const Ratio operator+() const noexcept;
-    const Ratio operator-() const noexcept;
+    constexpr const Ratio operator+() const noexcept {
+        return *this;
+    }
+    const Ratio operator-() const noexcept {
+        return Ratio(-x, y);
+    }
 
 
     const Ratio operator+(const Ratio& val) const;
@@ -224,43 +275,69 @@ class Float {
     double data = 0.0;
 
    public:
-    Float() noexcept = default;
-    Float(const Float&) noexcept = default;
-    Float(Float&&) noexcept = default;
+    constexpr Float() noexcept = default;
+    constexpr Float(const Float&) noexcept = default;
+    constexpr Float(Float&&) noexcept = default;
 
-    Float& operator=(const Float&) noexcept = default;
-    Float& operator=(Float&&) noexcept = default;
-
-
-    Float(const double val) noexcept;
+    constexpr Float& operator=(const Float&) noexcept = default;
+    constexpr Float& operator=(Float&&) noexcept = default;
 
 
-    Float(const Int& val) noexcept;
-    Float(const Ratio& val) noexcept;
+    constexpr Float(const double val) noexcept : data(val) {}
+
+
+    constexpr Float(const Int& val) noexcept : data(val.getInt()) {}
+    constexpr Float(const Ratio& val) noexcept : data(val.getDouble()) {}
 
 
     static const bool gen(const std::wstring& str, MathType& val);
 
 
-    const double getDouble() const noexcept;
+    constexpr const double getDouble() const noexcept {
+        return data;
+    }
 
 
-    const Float operator+() const noexcept;
-    const Float operator-() const noexcept;
+    constexpr const Float operator+() const noexcept {
+        return *this;
+    }
+    constexpr const Float operator-() const noexcept {
+        return -data;
+    }
 
 
-    const Float operator+(const Float& val) const noexcept;
-    const Float operator-(const Float& val) const noexcept;
-    const Float operator*(const Float& val) const noexcept;
-    const Float operator/(const Float& val) const noexcept;
+    constexpr const Float operator+(const Float& val) const noexcept {
+        return data + val.data;
+    }
+    constexpr const Float operator-(const Float& val) const noexcept {
+        return data - val.data;
+    }
+    constexpr const Float operator*(const Float& val) const noexcept {
+        return data * val.data;
+    }
+    constexpr const Float operator/(const Float& val) const noexcept {
+        return data / val.data;
+    }
 
 
-    const bool operator==(const Float& val) const noexcept;
-    const bool operator!=(const Float& val) const noexcept;
-    const bool operator<(const Float& val) const noexcept;
-    const bool operator<=(const Float& val) const noexcept;
-    const bool operator>(const Float& val) const noexcept;
-    const bool operator>=(const Float& val) const noexcept;
+    constexpr const bool operator==(const Float& val) const noexcept {
+        return data == val.data;
+    }
+    constexpr const bool operator!=(const Float& val) const noexcept {
+        return data != val.data;
+    }
+    constexpr const bool operator<(const Float& val) const noexcept {
+        return data < val.data;
+    }
+    constexpr const bool operator<=(const Float& val) const noexcept {
+        return data <= val.data;
+    }
+    constexpr const bool operator>(const Float& val) const noexcept {
+        return data > val.data;
+    }
+    constexpr const bool operator>=(const Float& val) const noexcept {
+        return data >= val.data;
+    }
 };
 
 
@@ -277,37 +354,53 @@ class Complex {
     Complex& operator=(Complex&&) noexcept = default;
 
 
-    Complex(const std::complex<double> val) noexcept;
+    Complex(const std::complex<double> val) noexcept : data(val) {}
 
 
-    Complex(const Int& val) noexcept;
-    Complex(const Ratio& val) noexcept;
-    Complex(const Float& val) noexcept;
+    Complex(const Int& val) noexcept : data(val.getInt()) {}
+    Complex(const Ratio& val) noexcept : data(val.getDouble()) {}
+    Complex(const Float& val) noexcept : data(val.getDouble()) {}
 
 
     static const bool gen(const std::wstring& str, MathType& val);
 
 
-    const double getX() const noexcept;
-    const double getY() const noexcept;
+    const double getReal() const noexcept {
+        return data.real();
+    }
+    const double getImag() const noexcept {
+        return data.imag();
+    }
 
 
-    const Complex operator+() const noexcept;
-    const Complex operator-() const noexcept;
+    const Complex operator+() const noexcept {
+        return *this;
+    }
+    const Complex operator-() const noexcept {
+        return -data;
+    }
 
 
-    const Complex operator+(const Complex& val) const noexcept;
-    const Complex operator-(const Complex& val) const noexcept;
-    const Complex operator*(const Complex& val) const noexcept;
-    const Complex operator/(const Complex& val) const noexcept;
+    const Complex operator+(const Complex& val) const noexcept {
+        return data + val.data;
+    }
+    const Complex operator-(const Complex& val) const noexcept {
+        return data - val.data;
+    }
+    const Complex operator*(const Complex& val) const noexcept {
+        return data * val.data;
+    }
+    const Complex operator/(const Complex& val) const noexcept {
+        return data / val.data;
+    }
 
 
-    const bool operator==(const Complex& val) const noexcept;
-    const bool operator!=(const Complex& val) const noexcept;
-    const bool operator<(const Complex& val) const noexcept;
-    const bool operator<=(const Complex& val) const noexcept;
-    const bool operator>(const Complex& val) const noexcept;
-    const bool operator>=(const Complex& val) const noexcept;
+    const bool operator==(const Complex& val) const noexcept {
+        return data == val.data;
+    }
+    const bool operator!=(const Complex& val) const noexcept {
+        return data != val.data;
+    }
 };
 
 

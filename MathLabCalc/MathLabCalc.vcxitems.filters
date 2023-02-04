@@ -9,14 +9,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)BaseMathTypes.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)all_operators_cpp20.h">
-      <Filter>MathType</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BaseMathTypes.h">
       <Filter>MathType</Filter>
     </ClInclude>
