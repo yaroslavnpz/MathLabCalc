@@ -7,6 +7,9 @@
 namespace calc {
 
 
+#define MATHTYPESLIST std::monostate, Bool, Int, Float, Complex
+
+
 class MathType;
 
 

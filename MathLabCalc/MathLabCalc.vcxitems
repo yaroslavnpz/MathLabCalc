@@ -15,10 +15,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)BaseMathTypes.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)BaseMathTypes.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)for_operators.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)List.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MathType.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Seg.h" />
   </ItemGroup>
 </Project>

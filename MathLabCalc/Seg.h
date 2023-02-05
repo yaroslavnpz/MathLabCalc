@@ -1,5 +1,6 @@
 #pragma once
 #include "BaseMathTypes.h"
+#include "MathType.h"
 
 
 #include <array>

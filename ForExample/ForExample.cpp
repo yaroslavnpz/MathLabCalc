@@ -8,11 +8,16 @@ using namespace std;
 
 
 #include "BaseMathTypes.h"
+#include "for_operators.h"
+
+using namespace calc;
 
 
 int main() {
     cout << "Hello";
 
-    calc::Int a, b;
+    Int a, b;
 
+
+    cout << has_positive_v<Int>;
 }
