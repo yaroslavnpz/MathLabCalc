@@ -19,5 +19,5 @@ int main() {
     Int a, b;
 
 
-    cout << has_positive_v<Int>;
+    is_convertible_v<Int, Ratio>;
 }

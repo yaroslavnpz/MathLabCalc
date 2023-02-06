@@ -6,56 +6,145 @@ namespace calc {
 
 
 template <typename Ty1, typename Ty2>
-static constexpr bool is_same = false;
+constexpr bool is_same_v = false;
 template <typename Ty>
-static constexpr bool is_same<Ty, Ty> = true;
+constexpr bool is_same_v<Ty, Ty> = true;
 
 
 template <typename Val, typename... List>
-static constexpr bool in_list_v = false;
+constexpr bool in_list_v = false;
 template <typename Val, typename... List>
-static constexpr bool in_list_v<Val, Val, List...> = true;
+constexpr bool in_list_v<Val, Val, List...> = true;
 template <typename Val, typename Ty, typename... List>
-static constexpr bool in_list_v<Val, Ty, List...> = in_list_v<Val, List...>;
+constexpr bool in_list_v<Val, Ty, List...> = in_list_v<Val, List...>;
 
 
 template <typename Ty>
-static constexpr bool is_math_types_v = in_list_v<Ty, MATHTYPESLIST>;
+constexpr bool is_math_types_v = in_list_v<Ty, MATHTYPESLIST>;
 
 
-template <typename... List>
-static constexpr bool is_any_v = true;
+template<bool val, typename Ty>
+using if_t = std::enable_if_t<val, Ty>;
 
 
-template <typename Ty, typename T = void>
-struct HasPositive : public std::false_type {};
-template <typename Ty>
-struct HasPositive<Ty, std::enable_if_t<!is_same<decltype(+std::declval<Ty>()), void>, void>> : public std::true_type {};
+template<typename From, typename To>
+constexpr bool is_convertible_to_v = std::is_convertible_v<From, To>;
+
+
+// for operators
+
+
+template<typename Ty, typename T = void>
+constexpr bool has_positive_v = false;
 template<typename Ty>
-constexpr bool has_positive_v = HasPositive<Ty>::value;
+constexpr bool has_positive_v<Ty, if_t<!is_same_v<decltype(+std::declval<Ty>()), void>, void>> = true;
 
 
 template <typename Ty, typename T = void>
-struct HasNegative : public std::false_type {};
+constexpr bool has_negative_v = false;
 template <typename Ty>
-struct HasNegative<Ty, std::enable_if_t<!is_same<decltype(-std::declval<Ty>()), void>, void>> : public std::true_type {};
-template <typename Ty>
-constexpr bool has_negative_v = HasNegative<Ty>::value;
+constexpr bool has_negative_v<Ty, if_t<!is_same_v<decltype(-std::declval<Ty>()), void>, void>> = true;
 
 
 template <typename Ty, typename T = void>
-struct HasPlus : public std::false_type {};
+constexpr bool has_log_not_v = false;
 template <typename Ty>
-struct HasPlus<Ty, std::enable_if_t<!is_same<decltype(std::declval<Ty>() + std::declval<Ty>()), void>, void>> : public std::true_type {};
-template <typename Ty>
-constexpr bool has_plus_v = HasPlus<Ty>::value;
+constexpr bool has_log_not_v<Ty, if_t<!is_same_v<decltype(!std::declval<Ty>()), void>, void>> = true;
 
 
 template <typename Ty, typename T = void>
-struct HasMinus : public std::false_type {};
+constexpr bool has_bin_not_v = false;
 template <typename Ty>
-struct HasMinus<Ty, std::enable_if_t<!is_same<decltype(std::declval<Ty>() - std::declval<Ty>()), void>, void>> : public std::true_type {};
+constexpr bool has_bin_not_v<Ty, if_t<!is_same_v<decltype(~std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_plus_v = false;
 template <typename Ty>
-constexpr bool has_minus_v = HasMinus<Ty>::value;
+constexpr bool has_plus_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() + std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_minus_v = false;
+template <typename Ty>
+constexpr bool has_minus_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() - std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_mul_v = false;
+template <typename Ty>
+constexpr bool has_mul_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() * std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_div_v = false;
+template <typename Ty>
+constexpr bool has_div_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() / std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_mod_v = false;
+template <typename Ty>
+constexpr bool has_mod_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() % std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_int_div_v = false;
+template <typename Ty>
+constexpr bool has_int_div_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>().intDiv(std::declval<Ty>())), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_bin_and_v = false;
+template <typename Ty>
+constexpr bool has_bin_and_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() & std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_bin_or_v = false;
+template <typename Ty>
+constexpr bool has_bin_or_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() | std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_bin_xor_v = false;
+template <typename Ty>
+constexpr bool has_bin_xor_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() ^ std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_bin_left_shift_v = false;
+template <typename Ty>
+constexpr bool has_bin_left_shift_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() << std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_bin_right_shift_v = false;
+template <typename Ty>
+constexpr bool has_bin_right_shift_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() >> std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_log_and_v = false;
+template <typename Ty>
+constexpr bool has_log_and_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() && std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_log_or_v = false;
+template <typename Ty>
+constexpr bool has_log_or_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() || std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_equal_v = false;
+template <typename Ty>
+constexpr bool has_equal_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() == std::declval<Ty>()), void>, void>> = true;
+
+
+template <typename Ty, typename T = void>
+constexpr bool has_comp_v = false;
+template <typename Ty>
+constexpr bool has_comp_v<Ty, if_t<!is_same_v<decltype(std::declval<Ty>() < std::declval<Ty>()), void>, void>> = true;
 
 }  // namespace calc

@@ -9,6 +9,9 @@
 namespace calc {
 
 
+using Error = std::monostate;
+
+
 class MathType {
    private:
     std::variant<MATHTYPESLIST> data;
@@ -32,6 +35,37 @@ class MathType {
 
     const MathType operator+() const;
     const MathType operator-() const;
+    const MathType operator!() const;
+    const MathType operator~() const;
+
+
+    const MathType operator+(const MathType& val) const;
+    const MathType operator-(const MathType& val) const;
+    const MathType operator*(const MathType& val) const;
+    const MathType operator/(const MathType& val) const;
+    const MathType operator%(const MathType& val) const;
+
+
+    const MathType intDiv(const MathType& val) const;
+
+
+    const MathType operator&(const MathType& val) const;
+    const MathType operator|(const MathType& val) const;
+    const MathType operator<<(const MathType& val) const;
+    const MathType operator>>(const MathType& val) const;
+    const MathType operator^(const MathType& val) const;
+
+
+    const MathType operator&&(const MathType& val) const;
+    const MathType operator||(const MathType& val) const;
+
+
+    const MathType operator==(const MathType& val) const;
+    const MathType operator!=(const MathType& val) const;
+    const MathType operator<(const MathType& val) const;
+    const MathType operator<=(const MathType& val) const;
+    const MathType operator>(const MathType& val) const;
+    const MathType operator>=(const MathType& val) const;
 };
 
 
