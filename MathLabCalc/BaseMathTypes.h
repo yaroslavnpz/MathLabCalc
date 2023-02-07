@@ -7,10 +7,19 @@
 namespace calc {
 
 
-#define MATHTYPESLIST std::monostate, Bool, Int, Float, Complex
+#define MATHTYPESLIST std::monostate, Bool, Int, Ratio, Float, Complex
 
 
 class MathType;
+
+
+constexpr const long long gcd(long long a, long long b) noexcept {
+    while (b != 0) {
+        a %= b;
+        std::swap(a, b);
+    }
+    return a;
+}
 
 
 class Bool {
@@ -358,6 +367,9 @@ class Complex {
 
 
     Complex(const std::complex<double> val) noexcept : data(val) {}
+
+
+    Complex(const double real, const double imag) : data(real, imag) {}
 
 
     Complex(const Int& val) noexcept : data(val.getInt()) {}

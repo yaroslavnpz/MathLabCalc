@@ -27,8 +27,10 @@ class MathType {
 
 
     MathType(const std::monostate& val);
+    MathType(const bool val);
     MathType(const Bool& val);
     MathType(const Int& val);
+    MathType(const Ratio& val);
     MathType(const Float& val);
     MathType(const Complex& val);
 
