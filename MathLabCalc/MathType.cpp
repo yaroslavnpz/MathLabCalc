@@ -242,8 +242,8 @@ const MathType MathType::operator||(const MathType& val) const {
     return std::visit(fn, data, val.data);
 }
 
-const MathType MathType::operator==(const MathType& val) const {
-    auto fn = [&](const auto& a, const auto& b) -> const MathType {
+const bool MathType::operator==(const MathType& val) const {
+    auto fn = [&](const auto& a, const auto& b) -> const bool {
         if constexpr (has_equal_v<decltype(a), decltype(b)>)
             return a == b;
         else if constexpr (is_convertible_to_v<decltype(b), decltype(a)> && has_equal_v<decltype(a), decltype(a)>)
@@ -251,13 +251,13 @@ const MathType MathType::operator==(const MathType& val) const {
         else if constexpr (is_convertible_to_v<decltype(a), decltype(b)> && has_equal_v<decltype(b), decltype(b)>)
             return static_cast<decltype(b)>(a) == b;
         else
-            return Error();
+            return false;
     };
     return std::visit(fn, data, val.data);
 }
 
-const MathType MathType::operator!=(const MathType& val) const {
-    auto fn = [&](const auto& a, const auto& b) -> const MathType {
+const bool MathType::operator!=(const MathType& val) const {
+    auto fn = [&](const auto& a, const auto& b) -> const bool {
         if constexpr (has_equal_v<decltype(a), decltype(b)>)
             return a == b;
         else if constexpr (is_convertible_to_v<decltype(b), decltype(a)> && has_equal_v<decltype(a), decltype(a)>)
@@ -265,13 +265,13 @@ const MathType MathType::operator!=(const MathType& val) const {
         else if constexpr (is_convertible_to_v<decltype(a), decltype(b)> && has_equal_v<decltype(b), decltype(b)>)
             return static_cast<decltype(b)>(a) == b;
         else
-            return Error();
+            return false;
     };
     return std::visit(fn, data, val.data);
 }
 
-const MathType MathType::operator<(const MathType& val) const {
-    auto fn = [&](const auto& a, const auto& b) -> const MathType {
+const bool MathType::operator<(const MathType& val) const {
+    auto fn = [&](const auto& a, const auto& b) -> const bool {
         if constexpr (has_comp_v<decltype(a), decltype(b)>)
             return a < b;
         else if constexpr (is_convertible_to_v<decltype(b), decltype(a)> && has_comp_v<decltype(a), decltype(a)>)
@@ -279,13 +279,13 @@ const MathType MathType::operator<(const MathType& val) const {
         else if constexpr (is_convertible_to_v<decltype(a), decltype(b)> && has_comp_v<decltype(b), decltype(b)>)
             return static_cast<decltype(b)>(a) < b;
         else
-            return Error();
+            return false;
     };
     return std::visit(fn, data, val.data);
 }
 
-const MathType MathType::operator<=(const MathType& val) const {
-    auto fn = [&](const auto& a, const auto& b) -> const MathType {
+const bool MathType::operator<=(const MathType& val) const {
+    auto fn = [&](const auto& a, const auto& b) -> const bool {
         if constexpr (has_comp_v<decltype(a), decltype(b)>)
             return a <= b;
         else if constexpr (is_convertible_to_v<decltype(b), decltype(a)> && has_comp_v<decltype(a), decltype(a)>)
@@ -293,13 +293,13 @@ const MathType MathType::operator<=(const MathType& val) const {
         else if constexpr (is_convertible_to_v<decltype(a), decltype(b)> && has_comp_v<decltype(b), decltype(b)>)
             return static_cast<decltype(b)>(a) <= b;
         else
-            return Error();
+            return false;
     };
     return std::visit(fn, data, val.data);
 }
 
-const MathType MathType::operator>(const MathType& val) const {
-    auto fn = [&](const auto& a, const auto& b) -> const MathType {
+const bool MathType::operator>(const MathType& val) const {
+    auto fn = [&](const auto& a, const auto& b) -> const bool {
         if constexpr (has_comp_v<decltype(a), decltype(b)>)
             return a > b;
         else if constexpr (is_convertible_to_v<decltype(b), decltype(a)> && has_comp_v<decltype(a), decltype(a)>)
@@ -307,13 +307,13 @@ const MathType MathType::operator>(const MathType& val) const {
         else if constexpr (is_convertible_to_v<decltype(a), decltype(b)> && has_comp_v<decltype(b), decltype(b)>)
             return static_cast<decltype(b)>(a) > b;
         else
-            return Error();
+            return false;
     };
     return std::visit(fn, data, val.data);
 }
 
-const MathType MathType::operator>=(const MathType& val) const {
-    auto fn = [&](const auto& a, const auto& b) -> const MathType {
+const bool MathType::operator>=(const MathType& val) const {
+    auto fn = [&](const auto& a, const auto& b) -> const bool {
         if constexpr (has_comp_v<decltype(a), decltype(b)>)
             return a >= b;
         else if constexpr (is_convertible_to_v<decltype(b), decltype(a)> && has_comp_v<decltype(a), decltype(a)>)
@@ -321,7 +321,7 @@ const MathType MathType::operator>=(const MathType& val) const {
         else if constexpr (is_convertible_to_v<decltype(a), decltype(b)> && has_comp_v<decltype(b), decltype(b)>)
             return static_cast<decltype(b)>(a) >= b;
         else
-            return Error();
+            return false;
     };
     return std::visit(fn, data, val.data);
 }

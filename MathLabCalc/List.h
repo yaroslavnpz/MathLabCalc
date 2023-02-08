@@ -33,6 +33,7 @@ class List {
 
     const List operator+() const;
     const List operator-() const;
+    const List operator~() const;
 
     const List operator+(const List& val) const;
     const List operator-(const List& val) const;

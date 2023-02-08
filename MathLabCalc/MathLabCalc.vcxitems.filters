@@ -13,6 +13,7 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)List.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)BaseMathTypes.h">

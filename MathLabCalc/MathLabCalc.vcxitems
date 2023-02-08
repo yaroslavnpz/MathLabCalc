@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)BaseMathTypes.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)List.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp" />
   </ItemGroup>
   <ItemGroup>

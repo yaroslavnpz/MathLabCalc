@@ -35,6 +35,11 @@ class MathType {
     MathType(const Complex& val);
 
 
+    constexpr size_t index() const noexcept {
+        return data.index();
+    }
+
+
     const MathType operator+() const;
     const MathType operator-() const;
     const MathType operator!() const;
@@ -62,12 +67,12 @@ class MathType {
     const MathType operator||(const MathType& val) const;
 
 
-    const MathType operator==(const MathType& val) const;
-    const MathType operator!=(const MathType& val) const;
-    const MathType operator<(const MathType& val) const;
-    const MathType operator<=(const MathType& val) const;
-    const MathType operator>(const MathType& val) const;
-    const MathType operator>=(const MathType& val) const;
+    const bool operator==(const MathType& val) const;
+    const bool operator!=(const MathType& val) const;
+    const bool operator<(const MathType& val) const;
+    const bool operator<=(const MathType& val) const;
+    const bool operator>(const MathType& val) const;
+    const bool operator>=(const MathType& val) const;
 };
 
 
