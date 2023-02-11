@@ -1,5 +1,18 @@
 #include <iostream>
 
+using namespace std;
+
+
+#include "BaseMathType.h"
+using namespace calc;
+
+
 int main() {
-    std::cout << "Hello World!\n";
+    Bool a;
+    a = a + a;
+    BaseMathType c;
+    a + c;
+
+    true + a;
+    a + false;
 }
