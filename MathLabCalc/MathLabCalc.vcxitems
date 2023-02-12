@@ -18,5 +18,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Double.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)exceptions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Int64.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MathType.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp" />
   </ItemGroup>
 </Project>

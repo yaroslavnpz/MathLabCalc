@@ -9,7 +9,7 @@ class Float;
 
 
 /// @brief Класс для хранения перменной типа double
-class Double : public BaseMathType {
+class Double {
    private:
     double data = 0.0;
 
@@ -23,8 +23,8 @@ class Double : public BaseMathType {
     constexpr Double& operator=(Double&&) noexcept;
 
 
-    constexpr Double(double val) noexcept;
-    constexpr Double(Int64 val) noexcept;
+    Double(double val) noexcept;
+    Double(Int64 val) noexcept;
     constexpr Double(Float val) noexcept;
     constexpr Double(const Ratio& val) noexcept;
 
@@ -61,4 +61,22 @@ class Double : public BaseMathType {
     friend const bool operator>(Double a, Double b) noexcept;
     friend const bool operator>=(Double a, Double b) noexcept;
 };
+
+
+Double operator+(Double val) noexcept;
+Double operator-(Double val) noexcept;
+Double operator~(Double val) noexcept;
+
+Double operator+(Double a, Double b) noexcept;
+Double operator-(Double a, Double b) noexcept;
+Double operator*(Double a, Double b) noexcept;
+Double operator/(Double a, Double b) noexcept;
+
+
+const bool operator==(Double a, Double b) noexcept;
+const bool operator!=(Double a, Double b) noexcept;
+const bool operator<(Double a, Double b) noexcept;
+const bool operator<=(Double a, Double b) noexcept;
+const bool operator>(Double a, Double b) noexcept;
+const bool operator>=(Double a, Double b) noexcept;
 }  // namespace calc

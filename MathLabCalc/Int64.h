@@ -1,12 +1,12 @@
 #pragma once
-#include "BaseMathType.h"
+#include <string>
 
 
 namespace calc {
 
 
 /// @brief Класс для хранения целочисленного 64 битного типа
-class Int64 : public BaseMathType {
+class Int64 {
    private:
     int64_t data = 0;
 
