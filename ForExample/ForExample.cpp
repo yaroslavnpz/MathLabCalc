@@ -3,19 +3,23 @@
 using namespace std;
 
 
-#include "BaseMathType.h"
 #include "Double.h"
 #include "Int64.h"
-#include "MathType.h"
+// #include "MathType.h"
 using namespace calc;
 
 
+union {
+    double a;
+    int64_t b;
+} s;
+
 int main() {
-    Double a, b;
-    Int64 c, d;
+    s.a = 5;
 
-    a + c;
+    cout << (s.b >> 40) << '\n';
 
-    MathType x, y;
-    x + y;
+    s.a = -5;
+
+    cout << (s.b >> 40)<< '\n';
 }

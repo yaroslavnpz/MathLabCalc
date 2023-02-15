@@ -1,17 +1,18 @@
 #pragma once
+#include "exceptions.h"
 #include "Int64.h"
 
 
 namespace calc {
 
-class Ratio;
-class Float;
+
+class MathType;
 
 
-/// @brief Класс для хранения перменной типа double
+/// @brief Класс для хранения целочисленного 64 битного типа
 class Double {
    private:
-    double data = 0.0;
+    double data = 0;
 
    public:
     constexpr Double() noexcept = default;
@@ -19,14 +20,19 @@ class Double {
     constexpr Double(Double&&) noexcept = default;
     ~Double() noexcept = default;
 
-    constexpr Double& operator=(const Double&) noexcept;
-    constexpr Double& operator=(Double&&) noexcept;
+    constexpr Double& operator=(const Double&) noexcept = default;
+    constexpr Double& operator=(Double&&) noexcept = default;
 
 
-    Double(double val) noexcept;
-    Double(Int64 val) noexcept;
-    constexpr Double(Float val) noexcept;
-    constexpr Double(const Ratio& val) noexcept;
+    constexpr Double(double data) noexcept : data(data) {}
+    constexpr Double(Int64 val) noexcept : data(val.getData()) {}
+
+
+    /// @brief Значение переменной в стандартных типах
+    /// @return Значение переменной в стандартных типах
+    constexpr double getData() const noexcept {
+        return data;
+    }
 
 
     /// @brief Строка, хранящая имя типа
@@ -37,46 +43,6 @@ class Double {
     /// @brief Строка, хранящая значение переменной
     /// @return Строка, хранящая значение переменной
     const std::wstring getName() const;
-
-
-    /// @brief Значение переменной в стандартных типах
-    /// @return Значение переменной в стандартных типах
-    constexpr double getData() const noexcept;
-
-
-    friend Double operator+(Double val) noexcept;
-    friend Double operator-(Double val) noexcept;
-    friend Double operator~(Double val) noexcept;
-
-    friend Double operator+(Double a, Double b) noexcept;
-    friend Double operator-(Double a, Double b) noexcept;
-    friend Double operator*(Double a, Double b) noexcept;
-    friend Double operator/(Double a, Double b) noexcept;
-
-
-    friend const bool operator==(Double a, Double b) noexcept;
-    friend const bool operator!=(Double a, Double b) noexcept;
-    friend const bool operator<(Double a, Double b) noexcept;
-    friend const bool operator<=(Double a, Double b) noexcept;
-    friend const bool operator>(Double a, Double b) noexcept;
-    friend const bool operator>=(Double a, Double b) noexcept;
 };
 
-
-Double operator+(Double val) noexcept;
-Double operator-(Double val) noexcept;
-Double operator~(Double val) noexcept;
-
-Double operator+(Double a, Double b) noexcept;
-Double operator-(Double a, Double b) noexcept;
-Double operator*(Double a, Double b) noexcept;
-Double operator/(Double a, Double b) noexcept;
-
-
-const bool operator==(Double a, Double b) noexcept;
-const bool operator!=(Double a, Double b) noexcept;
-const bool operator<(Double a, Double b) noexcept;
-const bool operator<=(Double a, Double b) noexcept;
-const bool operator>(Double a, Double b) noexcept;
-const bool operator>=(Double a, Double b) noexcept;
 }  // namespace calc

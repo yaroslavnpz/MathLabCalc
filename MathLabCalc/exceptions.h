@@ -1,8 +1,12 @@
 #pragma once
 #include <exception>
+#include <string>
 
 
 namespace calc {
+
+
+class MathType;
 
 
 class DivizionByZero : public std::exception {
@@ -32,4 +36,4 @@ class BadIterator : public std::exception {
 };
 
 
-}
+}  // namespace calc
