@@ -344,6 +344,17 @@ bool MathType::operator>=(const MathType& val) const {
     return std::visit(fn, data, val.data);
 }
 
+MathType MathType::operator[](const MathType& iter) const {
+    auto fn = [](const auto& a, const auto& b) -> MathType {
+        if constexpr (can_itert_v<decltype(a), decltype(b)>)
+            return a[b];
+        else
+            throw BadOperator();
+        return MathType();
+    };
+    return std::visit(fn, data, iter.data);
+}
+
 
 // Нужно написать еще реализации...
 
