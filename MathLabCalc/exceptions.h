@@ -14,7 +14,9 @@ class DivizionByZero : public std::exception {
     DivizionByZero() noexcept = default;
     ~DivizionByZero() noexcept = default;
 
-    const char* what() const override;
+    const char* what() const override {
+        return "Divizion by zero!\n";
+    }
 };
 
 
@@ -23,7 +25,9 @@ class BadOperator : public std::exception {
     BadOperator() noexcept = default;
     ~BadOperator() noexcept = default;
 
-    const char* what() const override;
+    const char* what() const override {
+        return "Bad operator for type\n";
+    }
 };
 
 
@@ -32,7 +36,9 @@ class BadIterator : public std::exception {
     BadIterator() noexcept = default;
     ~BadIterator() noexcept = default;
 
-    const char* what() const override;
+    const char* what() const override {
+        return "Bad iterator\n";
+    }
 };
 
 

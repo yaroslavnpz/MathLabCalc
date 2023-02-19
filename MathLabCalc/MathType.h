@@ -1,16 +1,16 @@
 #pragma once
 #include <variant>
 
-#include "Double.h"
-#include "Int64.h"
-#include "Ratio64.h"
 #include "Bool.h"
+#include "Double.h"
+#include "Int.h"
+#include "Ratio.h"
 
 
 namespace calc {
 
 
-#define MATHTYPESLIST Int64, Double
+#define MATHTYPESLIST Bool, Int, Ratio, Double
 
 
 class MathType {
@@ -27,8 +27,11 @@ class MathType {
     MathType& operator=(MathType&&) noexcept = default;
 
 
-    MathType(Int64 val) noexcept;
-    MathType(Double val) noexcept;
+    MathType(bool val) noexcept : data(Bool(val)) {}
+    MathType(Bool val) noexcept : data(val) {}
+    MathType(Int val) noexcept : data(val) {}
+    MathType(const Ratio& val) noexcept : data(val) {}
+    MathType(Double val) noexcept : data(val) {}
 
 
     const std::wstring getType() const;
@@ -67,42 +70,48 @@ class MathType {
     bool operator>=(const MathType& val) const;
 
 
-    MathType abs() const;
-    MathType sqrt() const;
-
-    MathType log2() const;
-    MathType log10() const;
-    MathType ln() const;
-
-
-    MathType sin() const;
-    MathType cos() const;
-    MathType tg() const;
-    MathType ctg() const;
-    MathType asin() const;
-    MathType acos() const;
-    MathType atg() const;
-
-
-    MathType pow(const MathType& base) const;
-    MathType log(const MathType& base) const;
-
-
-    MathType sort() const;
-    MathType unique() const;
-    MathType reverse() const;
-
-
-    MathType join(const MathType& val) const;
-
-
-    MathType min() const;
-    MathType min(const MathType& val) const;
-    MathType max() const;
-    MathType max(const MathType& val) const;
-
     MathType operator[](const MathType& iter) const;
 };
+
+
+MathType abs(const MathType& val);
+MathType sqrt(const MathType& val);
+
+
+MathType log2(const MathType& val);
+MathType log10(const MathType& val);
+MathType ln(const MathType& val);
+
+
+MathType sin(const MathType& val);
+MathType cos(const MathType& val);
+MathType tg(const MathType& val);
+MathType ctg(const MathType& val);
+
+
+MathType asin(const MathType& val);
+MathType acos(const MathType& val);
+MathType atg(const MathType& val);
+
+
+MathType pow(const MathType& val, const MathType& base);
+MathType log(const MathType& val, const MathType& base);
+
+
+MathType sort(const MathType& val);
+MathType unique(const MathType& val);
+MathType reverse(const MathType& val);
+
+
+MathType join(const MathType& val);
+
+
+MathType min(const MathType& val);
+MathType max(const MathType& val);
+
+
+MathType min(const MathType& a, const MathType& b);
+MathType max(const MathType& a, const MathType& b);
 
 
 }  // namespace calc

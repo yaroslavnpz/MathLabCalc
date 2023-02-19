@@ -40,61 +40,43 @@ class Bool {
     const std::wstring getName() const;
 
 
-    // friends operators -----------------------------------------------------------------------------------------------
+    constexpr Bool operator!() const noexcept {
+        return !data;
+    }
 
+    constexpr Bool operator+(Bool val) const noexcept {
+        return data + val.data;
+    }
+    constexpr Bool operator*(Bool val) const noexcept {
+        return data * val.data;
+    }
 
-    friend constexpr Bool operator!(Bool val) noexcept;
+    constexpr Bool operator||(Bool val) const noexcept {
+        return data || val.data;
+    }
+    constexpr Bool operator&&(Bool val) const noexcept {
+        return data && val.data;
+    }
 
-    friend constexpr Bool operator+(Bool a, Bool b) noexcept;
-    friend constexpr Bool operator*(Bool a, Bool b) noexcept;
-
-    friend constexpr Bool operator||(Bool a, Bool b) noexcept;
-    friend constexpr Bool operator&&(Bool a, Bool b) noexcept;
-
-    friend constexpr Bool operator==(Bool a, Bool b) noexcept;
-    friend constexpr Bool operator!=(Bool a, Bool b) noexcept;
-    friend constexpr Bool operator<(Bool a, Bool b) noexcept;
-    friend constexpr Bool operator<=(Bool a, Bool b) noexcept;
-    friend constexpr Bool operator>(Bool a, Bool b) noexcept;
-    friend constexpr Bool operator>=(Bool a, Bool b) noexcept;
+    constexpr bool operator==(Bool val) const noexcept {
+        return data == val.data;
+    }
+    constexpr bool operator!=(Bool val) const noexcept {
+        return data != val.data;
+    }
+    constexpr bool operator<(Bool val) const noexcept {
+        return data < val.data;
+    }
+    constexpr bool operator<=(Bool val) const noexcept {
+        return data <= val.data;
+    }
+    constexpr bool operator>(Bool val) const noexcept {
+        return data > val.data;
+    }
+    constexpr bool operator>=(Bool val) const noexcept {
+        return data >= val.data;
+    }
 };
 
-
-constexpr Bool operator!(Bool val) noexcept {
-    return !val.data;
-}
-
-constexpr Bool operator+(Bool a, Bool b) noexcept {
-    return a.data + b.data;
-}
-constexpr Bool operator*(Bool a, Bool b) noexcept {
-    return a.data * b.data;
-}
-
-constexpr Bool operator||(Bool a, Bool b) noexcept {
-    return a.data || b.data;
-}
-constexpr Bool operator&&(Bool a, Bool b) noexcept {
-    return a.data && b.data;
-}
-
-constexpr Bool operator==(Bool a, Bool b) noexcept {
-    return a.data == b.data;
-}
-constexpr Bool operator!=(Bool a, Bool b) noexcept {
-    return a.data != b.data;
-}
-constexpr Bool operator<(Bool a, Bool b) noexcept {
-    return a.data < b.data;
-}
-constexpr Bool operator<=(Bool a, Bool b) noexcept {
-    return a.data <= b.data;
-}
-constexpr Bool operator>(Bool a, Bool b) noexcept {
-    return a.data > b.data;
-}
-constexpr Bool operator>=(Bool a, Bool b) noexcept {
-    return a.data >= b.data;
-}
 
 }  // namespace calc

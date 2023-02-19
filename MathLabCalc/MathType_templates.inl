@@ -4,7 +4,6 @@
 
 namespace calc {
 
-
 template <typename Ty, typename v = void>
 constexpr bool can_plus_v = false;
 template <typename Ty>
@@ -245,3 +244,69 @@ constexpr bool can_itert_v<A, B, std::enable_if_t<!std::is_same_v<decltype(std::
 
 
 }  // namespace calc
+
+
+/*
+* Реализуются следующие операции:
+* +a
+* -a
+* ~a
+* !a
+*
+* a + b
+* a - b
+* a * b
+* a / b
+* a % b
+* intDiv(a, b)
+*
+* a & b
+* a | b
+* a ^ b
+* a << b
+* a >> b
+*
+* a || b
+* a && b
+*
+* a == b
+* a != b
+* a < b
+* a <= b
+* a > b
+* a >= b
+*
+* abs(a)
+* sqrt(a)
+*
+* log2(a)
+* log10(a)
+* ln(a)
+*
+* sin(a)
+* cos(a)
+* tg(a)
+* ctg(a)
+*
+* asin(a)
+* acos(a)
+* atg(a)
+*
+* pow(a, b)
+* log(a, b)
+*
+* sort(a)
+* unique(a)
+* reverse(a)
+*
+* join(a, b)
+*
+* min(a)
+* max(a)
+*
+* min(a, b)
+* max(a, b)
+*
+* a[b]
+
+*/

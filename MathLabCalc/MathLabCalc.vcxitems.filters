@@ -2,55 +2,45 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Double.cpp">
-      <Filter>Double</Filter>
+      <Filter>Ready\Double</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Int64.cpp">
-      <Filter>Int64</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Int.cpp">
+      <Filter>Ready\Int</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp">
       <Filter>MathType</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Bool.cpp">
-      <Filter>Bool</Filter>
+      <Filter>Ready\Bool</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Ratio64.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp">
+      <Filter>Ready\Ratio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)exceptions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Double.h">
-      <Filter>Double</Filter>
+      <Filter>Ready\Double</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Int64.h">
-      <Filter>Int64</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Int.h">
+      <Filter>Ready\Int</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MathType.h">
       <Filter>MathType</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Bool.h">
-      <Filter>Bool</Filter>
+      <Filter>Ready\Bool</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Complex.h">
       <Filter>Complex</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Ratio64.h">
-      <Filter>Ratio64</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h">
+      <Filter>Ready\Ratio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Double">
-      <UniqueIdentifier>{2276efb6-b1f5-4283-a04a-b262c50a1100}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Int64">
-      <UniqueIdentifier>{18d550f7-a202-433b-ba61-a5d9036c8bf5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MathType">
       <UniqueIdentifier>{a374b9f3-8c36-492a-97d1-9b68827fbeac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Bool">
-      <UniqueIdentifier>{39bb5b09-36d8-445b-ba38-dd29427e462a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Ratio64">
-      <UniqueIdentifier>{7f392ad3-c945-4c17-be58-a1ece8648d99}</UniqueIdentifier>
     </Filter>
     <Filter Include="Complex">
       <UniqueIdentifier>{284b837b-bc03-454c-9751-a4d2a8e2528e}</UniqueIdentifier>
@@ -66,6 +56,21 @@
     </Filter>
     <Filter Include="List">
       <UniqueIdentifier>{144c056c-216f-470e-8890-b80dd190f9cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ready">
+      <UniqueIdentifier>{2b899e57-32b8-48b7-9bc3-82cedb868ca9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ready\Bool">
+      <UniqueIdentifier>{39bb5b09-36d8-445b-ba38-dd29427e462a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ready\Int">
+      <UniqueIdentifier>{18d550f7-a202-433b-ba61-a5d9036c8bf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ready\Double">
+      <UniqueIdentifier>{2276efb6-b1f5-4283-a04a-b262c50a1100}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ready\Ratio">
+      <UniqueIdentifier>{7f392ad3-c945-4c17-be58-a1ece8648d99}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -3,9 +3,7 @@
 using namespace std;
 
 
-#include "Double.h"
-#include "Int64.h"
-// #include "MathType.h"
+#include "MathType.h"
 using namespace calc;
 
 
@@ -15,11 +13,9 @@ union {
 } s;
 
 int main() {
-    s.a = 5;
+    MathType a, b;
+    a = Int(5);
+    b = Int(4);
 
-    cout << (s.b >> 40) << '\n';
-
-    s.a = -5;
-
-    cout << (s.b >> 40)<< '\n';
+    wcout << (a / b).getName() << '\n';
 }

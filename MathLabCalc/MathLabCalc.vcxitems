@@ -18,16 +18,16 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Complex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Double.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)exceptions.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Int64.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Int.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MathType.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Ratio64.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Bool.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Double.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Int64.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Int.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Ratio64.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)MathType_templates.inl" />
