@@ -19,6 +19,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Double.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)exceptions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Int.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)List.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MathType.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Stack.h" />
@@ -27,6 +28,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Bool.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Double.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Int.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)List.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Stack.cpp" />
