@@ -16,6 +16,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp">
       <Filter>Ready\Ratio</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)exceptions.h" />
@@ -37,6 +38,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h">
       <Filter>Ready\Ratio</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Stack.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="MathType">
