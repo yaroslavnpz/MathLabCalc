@@ -1,12 +1,8 @@
 #pragma once
-#include "exceptions.h"
+#include "begMathTypes.h"
 
 
 namespace calc {
-
-
-class Ratio;
-class Double;
 
 
 /// @brief Класс для хранения целочисленного 64 битного типа

@@ -1,5 +1,5 @@
 #pragma once
-#include "exceptions.h"
+#include "begMathTypes.h"
 
 
 namespace calc {

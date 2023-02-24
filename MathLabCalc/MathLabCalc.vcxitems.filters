@@ -2,89 +2,91 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Double.cpp">
-      <Filter>Ready\Double</Filter>
+      <Filter>MathTypes\Double</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Int.cpp">
-      <Filter>Ready\Int</Filter>
+      <Filter>MathTypes\Int</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp">
-      <Filter>MathType</Filter>
+      <Filter>MathTypes\MathType</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Bool.cpp">
-      <Filter>Ready\Bool</Filter>
+      <Filter>MathTypes\Bool</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp">
-      <Filter>Ready\Ratio</Filter>
+      <Filter>MathTypes\Ratio</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Stack.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)List.cpp">
-      <Filter>List</Filter>
+      <Filter>MathTypes\List</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Seg.cpp">
+      <Filter>MathTypes\Seg</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)exceptions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Double.h">
-      <Filter>Ready\Double</Filter>
+      <Filter>MathTypes\Double</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Int.h">
-      <Filter>Ready\Int</Filter>
+      <Filter>MathTypes\Int</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MathType.h">
-      <Filter>MathType</Filter>
+      <Filter>MathTypes\MathType</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Bool.h">
-      <Filter>Ready\Bool</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Complex.h">
-      <Filter>Complex</Filter>
+      <Filter>MathTypes\Bool</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h">
-      <Filter>Ready\Ratio</Filter>
+      <Filter>MathTypes\Ratio</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Stack.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)List.h">
-      <Filter>List</Filter>
+      <Filter>MathTypes\List</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)basic_algs.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Seg.h">
+      <Filter>MathTypes\Seg</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)begMathTypes.h">
+      <Filter>MathTypes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="MathType">
-      <UniqueIdentifier>{a374b9f3-8c36-492a-97d1-9b68827fbeac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Complex">
-      <UniqueIdentifier>{284b837b-bc03-454c-9751-a4d2a8e2528e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Seg">
-      <UniqueIdentifier>{054723b9-e1d1-4ad2-a551-4d103c9d9e24}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Quad">
-      <UniqueIdentifier>{2a463dd2-6c60-4d55-b262-b542ef2d3c86}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Set">
       <UniqueIdentifier>{fedd5c13-c1b0-41d5-b4c2-fccf9ae4a8e2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="List">
-      <UniqueIdentifier>{144c056c-216f-470e-8890-b80dd190f9cc}</UniqueIdentifier>
+    <Filter Include="Stack">
+      <UniqueIdentifier>{b7d9b081-ec53-40f0-8bd3-f5eb13bdf16c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Ready">
-      <UniqueIdentifier>{2b899e57-32b8-48b7-9bc3-82cedb868ca9}</UniqueIdentifier>
+    <Filter Include="MathTypes">
+      <UniqueIdentifier>{4464243f-dfe8-4b49-8f96-b3b304cfc8bb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Ready\Bool">
+    <Filter Include="MathTypes\Bool">
       <UniqueIdentifier>{39bb5b09-36d8-445b-ba38-dd29427e462a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Ready\Int">
+    <Filter Include="MathTypes\MathType">
+      <UniqueIdentifier>{a374b9f3-8c36-492a-97d1-9b68827fbeac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\List">
+      <UniqueIdentifier>{144c056c-216f-470e-8890-b80dd190f9cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\Int">
       <UniqueIdentifier>{18d550f7-a202-433b-ba61-a5d9036c8bf5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Ready\Double">
+    <Filter Include="MathTypes\Double">
       <UniqueIdentifier>{2276efb6-b1f5-4283-a04a-b262c50a1100}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Ready\Ratio">
+    <Filter Include="MathTypes\Ratio">
       <UniqueIdentifier>{7f392ad3-c945-4c17-be58-a1ece8648d99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\Seg">
+      <UniqueIdentifier>{054723b9-e1d1-4ad2-a551-4d103c9d9e24}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)MathType_templates.inl">
-      <Filter>MathType</Filter>
+      <Filter>MathTypes\MathType</Filter>
     </None>
   </ItemGroup>
 </Project>
