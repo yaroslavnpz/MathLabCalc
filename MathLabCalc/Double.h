@@ -1,12 +1,10 @@
 #pragma once
-#include "exceptions.h"
+#include "begMathTypes.h"
+
 #include "Int.h"
 
 
 namespace calc {
-
-
-class MathType;
 
 
 /// @brief Класс для хранения целочисленного 64 битного типа

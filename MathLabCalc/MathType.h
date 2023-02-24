@@ -1,17 +1,21 @@
 #pragma once
 #include <variant>
 
+#include "begMathTypes.h"
+
+
 #include "Bool.h"
 #include "Double.h"
 #include "Int.h"
 #include "List.h"
 #include "Ratio.h"
+#include "Seg.h"
 
 
 namespace calc {
 
 
-#define MATHTYPESLIST Bool, Int, Ratio, Double, List
+#define MATHTYPESLIST Bool, Int, Ratio, Double, List, Seg
 
 
 class MathType {
@@ -37,6 +41,7 @@ class MathType {
     MathType(const Ratio& val) noexcept : data(val) {}
     MathType(Double val) noexcept : data(val) {}
     MathType(const List& val) noexcept : data(val) {}
+    MathType(const Seg& val) noexcept : data(val) {}
 
 
     const std::wstring getType() const;

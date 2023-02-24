@@ -19,7 +19,23 @@ List::List(const MathType& val) :_data(new MathType[1]), _size(1) {
     _data[0] = val;
 }
 
+List::List(Bool val) : _data(new MathType[1]), _size(1) {
+    _data[0] = val;
+}
+
 List::List(Int val) : _data(new MathType[1]), _size(1) {
+    _data[0] = val;
+}
+
+List::List(Double val) : _data(new MathType[1]), _size(1) {
+    _data[0] = val;
+}
+
+List::List(const Ratio& val) : _data(new MathType[1]), _size(1) {
+    _data[0] = val;
+}
+
+List::List(const Seg& val) : _data(new MathType[1]), _size(1) {
     _data[0] = val;
 }
 

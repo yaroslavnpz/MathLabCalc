@@ -1,5 +1,5 @@
 #pragma once
-#include "Double.h"
+#include "begMathTypes.h"
 
 
 #include <memory>
@@ -27,7 +27,11 @@ class List {
     List(size_t size);
     List(const std::initializer_list<MathType>& val);
     List(const MathType& val);
+    List(Bool val);
     List(Int val);
+    List(Double val);
+    List(const Ratio& val);
+    List(const Seg& val);
 
 
     const std::wstring getType() const;
@@ -127,6 +131,45 @@ class List {
     friend MathType min(const List& val);
     friend MathType max(const List& val);
 };
+
+
+List abs(const List& val);
+List sqrt(const List& val);
+
+
+List log2(const List& val);
+List log10(const List& val);
+List ln(const List& val);
+
+
+List sin(const List& val);
+List cos(const List& val);
+List tg(const List& val);
+List ctg(const List& val);
+
+
+List asin(const List& val);
+List acos(const List& val);
+List atg(const List& val);
+
+
+List pow(const List& val, const MathType& base);
+List pow(const List& val, const List& base);
+List log(const List& val, const MathType& base);
+List log(const List& val, const List& base);
+
+
+List sort(const List& val);
+List unique(const List& val);
+List reverse(const List& val);
+
+
+List join(const List& val, const MathType& add);
+List join(const List& val, const List& add);
+
+
+MathType min(const List& val);
+MathType max(const List& val);
 
 
 }  // namespace calc
