@@ -13,6 +13,7 @@ class List {
     std::shared_ptr<MathType[]> _data;
     size_t _size = 0;
 
+
    public:
     List() noexcept = default;
     List(const List&) noexcept = default;
@@ -25,6 +26,12 @@ class List {
 
     List(size_t size);
     List(const std::initializer_list<MathType>& val);
+    List(const MathType& val);
+    List(Int val);
+
+
+    const std::wstring getType() const;
+    const std::wstring getName() const;
 
 
     void clear();
@@ -35,7 +42,20 @@ class List {
     }
 
 
-    MathType operator[](size_t iter) const;
+    MathType* begin() noexcept;
+
+    const MathType* begin() const noexcept;
+
+    MathType* end() noexcept;
+
+    const MathType* end() const noexcept;
+
+
+    const MathType operator[](size_t iter) const;
+
+
+    const MathType operator[](Int val) const;
+    const List operator[](const List& val) const;
 
 
     List operator+() const;
@@ -106,10 +126,6 @@ class List {
 
     friend MathType min(const List& val);
     friend MathType max(const List& val);
-
-
-    friend List min(const List& a, const List& b);
-    friend List max(const List& a, const List& b);
 };
 
 

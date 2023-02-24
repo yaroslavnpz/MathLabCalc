@@ -45,6 +45,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)List.h">
       <Filter>List</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)basic_algs.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="MathType">

@@ -105,12 +105,4 @@ Double pow(const Ratio& val, const Ratio& base) noexcept;
 Double log(const Ratio& val, const Ratio& base) noexcept;
 
 
-constexpr Ratio min(const Ratio& a, const Ratio& b) noexcept {
-    return a < b ? a : b;
-}
-constexpr Ratio max(const Ratio& a, const Ratio& b) noexcept {
-    return a > b ? a : b;
-}
-
-
 }  // namespace calc

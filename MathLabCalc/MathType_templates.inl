@@ -221,27 +221,21 @@ constexpr bool can_min1_v = false;
 template <typename Ty>
 constexpr bool can_min1_v<Ty, std::enable_if_t<!std::is_same_v<decltype(min(std::declval<Ty>())), void>, void>> = true;
 
-template <typename A, typename B, typename v = void>
-constexpr bool can_min2_v = false;
-template <typename A, typename B>
-constexpr bool can_min2_v<A, B, std::enable_if_t<!std::is_same_v<decltype(min(std::declval<A>(), std::declval<B>())), void>, void>> = true;
-
 template <typename Ty, typename v = void>
 constexpr bool can_max1_v = false;
 template <typename Ty>
 constexpr bool can_max1_v<Ty, std::enable_if_t<!std::is_same_v<decltype(max(std::declval<Ty>())), void>, void>> = true;
 
 template <typename A, typename B, typename v = void>
-constexpr bool can_max2_v = false;
-template <typename A, typename B>
-constexpr bool can_max2_v<A, B, std::enable_if_t<!std::is_same_v<decltype(max(std::declval<A>(), std::declval<B>())), void>, void>> = true;
-
-
-template <typename A, typename B, typename v = void>
 constexpr bool can_itert_v = false;
 template <typename A, typename B>
 constexpr bool can_itert_v<A, B, std::enable_if_t<!std::is_same_v<decltype(std::declval<A>()[std::declval<B>()]), void>, void>> = true;
 
+
+template <typename Ty, typename v = void>
+constexpr bool can_size_v = false;
+template <typename Ty>
+constexpr bool can_size_v<Ty, std::enable_if_t<!std::is_same_v<decltype(std::declval<Ty>().size()), void>, void>> = true;
 
 }  // namespace calc
 
@@ -308,5 +302,7 @@ constexpr bool can_itert_v<A, B, std::enable_if_t<!std::is_same_v<decltype(std::
 * max(a, b)
 *
 * a[b]
+*
+* size(a)
 
 */

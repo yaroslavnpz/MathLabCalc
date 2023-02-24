@@ -140,12 +140,4 @@ Double atg(Int val);
 Double pow(Int a, Int base) noexcept;
 Double log(Int a, Int base);
 
-
-constexpr Int min(Int a, Int b) noexcept {
-    return a < b ? a : b;
-}
-constexpr Int max(Int a, Int b) noexcept {
-    return a > b ? a : b;
-}
-
 }  // namespace calc

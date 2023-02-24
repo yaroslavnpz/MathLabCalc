@@ -113,12 +113,4 @@ Double atg(Double val);
 Double pow(Double val, Double base) noexcept;
 Double log(Double val, Double base);
 
-
-constexpr Double min(Double a, Double b) noexcept {
-    return a < b ? a : b;
-}
-constexpr Double max(Double a, Double b) noexcept {
-    return a > b ? a : b;
-}
-
 }  // namespace calc
