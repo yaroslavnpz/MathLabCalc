@@ -1,4 +1,5 @@
 #include <iostream>
+#include <complex>
 
 using namespace std;
 
@@ -10,8 +11,13 @@ using namespace calc;
 int main() {
     MathType a, b;
 
+    complex<double> c = 1;
+    cout << sin(c) << '\n';
+
     a = Seg(2, 3);
     b = List({1, 2, 3, 4});
+
+
 
     
     try {

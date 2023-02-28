@@ -16,12 +16,17 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Ratio.cpp">
       <Filter>MathTypes\Ratio</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Stack.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)List.cpp">
       <Filter>MathTypes\List</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Seg.cpp">
       <Filter>MathTypes\Seg</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Stack.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Complex.cpp">
+      <Filter>MathTypes\Complex</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -41,7 +46,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Ratio.h">
       <Filter>MathTypes\Ratio</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Stack.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)List.h">
       <Filter>MathTypes\List</Filter>
     </ClInclude>
@@ -50,6 +54,15 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)begMathTypes.h">
       <Filter>MathTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Stack.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Complex.h">
+      <Filter>MathTypes\Complex</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Set.h">
+      <Filter>Set</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -74,14 +87,17 @@
     <Filter Include="MathTypes\Int">
       <UniqueIdentifier>{18d550f7-a202-433b-ba61-a5d9036c8bf5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MathTypes\Double">
-      <UniqueIdentifier>{2276efb6-b1f5-4283-a04a-b262c50a1100}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MathTypes\Ratio">
       <UniqueIdentifier>{7f392ad3-c945-4c17-be58-a1ece8648d99}</UniqueIdentifier>
     </Filter>
     <Filter Include="MathTypes\Seg">
       <UniqueIdentifier>{054723b9-e1d1-4ad2-a551-4d103c9d9e24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\Complex">
+      <UniqueIdentifier>{84665dc0-36af-47a9-9793-f71759112100}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\Double">
+      <UniqueIdentifier>{2276efb6-b1f5-4283-a04a-b262c50a1100}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

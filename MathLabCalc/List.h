@@ -59,30 +59,30 @@ class List {
 
 
     const MathType operator[](Int val) const;
-    const List operator[](const List& val) const;
+    const const List operator[](const List& val) const;
 
 
-    List operator+() const;
-    List operator-() const;
-    List operator!() const;
-    List operator~() const;
+    const List operator+() const;
+    const List operator-() const;
+    const List operator!() const;
+    const List operator~() const;
 
-    List operator+(const List& val) const;
-    List operator-(const List& val) const;
-    List operator*(const List& val) const;
-    List operator/(const List& val) const;
-    List operator%(const List& val) const;
+    const List operator+(const List& val) const;
+    const List operator-(const List& val) const;
+    const List operator*(const List& val) const;
+    const List operator/(const List& val) const;
+    const List operator%(const List& val) const;
 
-    List intDiv(const List& val) const;
+    const List intDiv(const List& val) const;
 
-    List operator&(const List& val) const;
-    List operator|(const List& val) const;
-    List operator^(const List& val) const;
-    List operator<<(const List& val) const;
-    List operator>>(const List& val) const;
+    const List operator&(const List& val) const;
+    const List operator|(const List& val) const;
+    const List operator^(const List& val) const;
+    const List operator<<(const List& val) const;
+    const List operator>>(const List& val) const;
 
-    List operator&&(const List& val) const;
-    List operator||(const List& val) const;
+    const List operator&&(const List& val) const;
+    const List operator||(const List& val) const;
 
 
     bool operator==(const List& val) const;
@@ -93,39 +93,39 @@ class List {
     bool operator>=(const List& val) const;
 
 
-    friend List abs(const List& val);
-    friend List sqrt(const List& val);
+    friend const List abs(const List& val);
+    friend const List sqrt(const List& val);
 
 
-    friend List log2(const List& val);
-    friend List log10(const List& val);
-    friend List ln(const List& val);
+    friend const List log2(const List& val);
+    friend const List log10(const List& val);
+    friend const List ln(const List& val);
 
 
-    friend List sin(const List& val);
-    friend List cos(const List& val);
-    friend List tg(const List& val);
-    friend List ctg(const List& val);
+    friend const List sin(const List& val);
+    friend const List cos(const List& val);
+    friend const List tg(const List& val);
+    friend const List ctg(const List& val);
 
 
-    friend List asin(const List& val);
-    friend List acos(const List& val);
-    friend List atg(const List& val);
+    friend const List asin(const List& val);
+    friend const List acos(const List& val);
+    friend const List atg(const List& val);
 
 
-    friend List pow(const List& val, const MathType& base);
-    friend List pow(const List& val, const List& base);
-    friend List log(const List& val, const MathType& base);
-    friend List log(const List& val, const List& base);
+    friend const List pow(const List& val, const MathType& base);
+    friend const List pow(const List& val, const List& base);
+    friend const List log(const List& val, const MathType& base);
+    friend const List log(const List& val, const List& base);
 
 
-    friend List sort(const List& val);
-    friend List unique(const List& val);
-    friend List reverse(const List& val);
+    friend const List sort(const List& val);
+    friend const List unique(const List& val);
+    friend const List reverse(const List& val);
 
 
-    friend List join(const List& val, const MathType& add);
-    friend List join(const List& val, const List& add);
+    friend const List join(const List& val, const MathType& add);
+    friend const List join(const List& val, const List& add);
 
 
     friend MathType min(const List& val);
@@ -133,39 +133,39 @@ class List {
 };
 
 
-List abs(const List& val);
-List sqrt(const List& val);
+const List abs(const List& val);
+const List sqrt(const List& val);
 
 
-List log2(const List& val);
-List log10(const List& val);
-List ln(const List& val);
+const List log2(const List& val);
+const List log10(const List& val);
+const List ln(const List& val);
 
 
-List sin(const List& val);
-List cos(const List& val);
-List tg(const List& val);
-List ctg(const List& val);
+const List sin(const List& val);
+const List cos(const List& val);
+const List tg(const List& val);
+const List ctg(const List& val);
 
 
-List asin(const List& val);
-List acos(const List& val);
-List atg(const List& val);
+const List asin(const List& val);
+const List acos(const List& val);
+const List atg(const List& val);
 
 
-List pow(const List& val, const MathType& base);
-List pow(const List& val, const List& base);
-List log(const List& val, const MathType& base);
-List log(const List& val, const List& base);
+const List pow(const List& val, const MathType& base);
+const List pow(const List& val, const List& base);
+const List log(const List& val, const MathType& base);
+const List log(const List& val, const List& base);
 
 
-List sort(const List& val);
-List unique(const List& val);
-List reverse(const List& val);
+const List sort(const List& val);
+const List unique(const List& val);
+const List reverse(const List& val);
 
 
-List join(const List& val, const MathType& add);
-List join(const List& val, const List& add);
+const List join(const List& val, const MathType& add);
+const List join(const List& val, const List& add);
 
 
 MathType min(const List& val);

@@ -13,61 +13,61 @@ const std::wstring Int::getName() const {
     return std::to_wstring(data);
 }
 
-Ratio Int::operator/(Int val) const {
+const Ratio Int::operator/(const Int val) const {
     return Ratio(data, val.data);
 }
 
-Double sqrt(Int val) {
+const Double sqrt(const Int val) {
     if (val.getData() < 0)
         throw BadOperator();
     return ::sqrt(val.getData());
 }
 
-Double log2(Int val) {
+const Double log2(const Int val) {
     return ::log2(val.getData());
 }
 
-Double log10(Int val) {
+const Double log10(const Int val) {
     return ::log10(val.getData());
 }
 
-Double ln(Int val) {
+const Double ln(const Int val) {
     return ::log(val.getData());
 }
 
-Double sin(Int val) {
+const Double sin(const Int val) {
     return ::sin(val.getData());
 }
 
-Double cos(Int val) {
+const Double cos(const Int val) {
     return ::cos(val.getData());
 }
 
-Double tg(Int val) {
+const Double tg(const Int val) {
     return ::tan(val.getData());
 }
 
-Double ctg(Int val) {
+const Double ctg(const Int val) {
     return 1.0 / ::tan(val.getData());
 }
 
-Double asin(Int val) {
+const Double asin(const Int val) {
     return ::asin(val.getData());
 }
 
-Double acos(Int val) {
+const Double acos(const Int val) {
     return ::acos(val.getData());
 }
 
-Double atg(Int val) {
+const Double atg(const Int val) {
     return ::atan(val.getData());
 }
 
-Double pow(Int a, Int base) noexcept {
+const Double pow(const Int a, const Int base) noexcept {
     return ::pow(a.getData(), base.getData());
 }
 
-Double log(Int a, Int base) {
+const Double log(const Int a, const Int base) {
     return ::log(a.getData()) / ::log(base.getData());
 }
 

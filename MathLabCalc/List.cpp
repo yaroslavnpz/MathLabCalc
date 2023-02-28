@@ -92,35 +92,35 @@ const List List::operator[](const List& val) const {
     return res;
 }
 
-List List::operator+() const {
+const List List::operator+() const {
     List res(_size);
     for (size_t i = 0; i < _size; ++i)
         res._data[i] = +_data[i];
     return res;
 }
 
-List List::operator-() const {
+const List List::operator-() const {
     List res(_size);
     for (size_t i = 0; i < _size; ++i)
         res._data[i] = -_data[i];
     return res;
 }
 
-List List::operator!() const {
+const List List::operator!() const {
     List res(_size);
     for (size_t i = 0; i < _size; ++i)
         res._data[i] = !_data[i];
     return res;
 }
 
-List List::operator~() const {
+const List List::operator~() const {
     List res(_size);
     for (size_t i = 0; i < _size; ++i)
         res._data[i] = ~_data[i];
     return res;
 }
 
-List List::operator+(const List& val) const {
+const List List::operator+(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -130,7 +130,7 @@ List List::operator+(const List& val) const {
     return res;
 }
 
-List List::operator-(const List& val) const {
+const List List::operator-(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -140,7 +140,7 @@ List List::operator-(const List& val) const {
     return res;
 }
 
-List List::operator*(const List& val) const {
+const List List::operator*(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -150,7 +150,7 @@ List List::operator*(const List& val) const {
     return res;
 }
 
-List List::operator/(const List& val) const {
+const List List::operator/(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -160,7 +160,7 @@ List List::operator/(const List& val) const {
     return res;
 }
 
-List List::operator%(const List& val) const {
+const List List::operator%(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -170,7 +170,7 @@ List List::operator%(const List& val) const {
     return res;
 }
 
-List List::intDiv(const List& val) const {
+const List List::intDiv(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -180,7 +180,7 @@ List List::intDiv(const List& val) const {
     return res;
 }
 
-List List::operator&(const List& val) const {
+const List List::operator&(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -190,7 +190,7 @@ List List::operator&(const List& val) const {
     return res;
 }
 
-List List::operator|(const List& val) const {
+const List List::operator|(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -200,7 +200,7 @@ List List::operator|(const List& val) const {
     return res;
 }
 
-List List::operator^(const List& val) const {
+const List List::operator^(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -210,7 +210,7 @@ List List::operator^(const List& val) const {
     return res;
 }
 
-List List::operator<<(const List& val) const {
+const List List::operator<<(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -220,7 +220,7 @@ List List::operator<<(const List& val) const {
     return res;
 }
 
-List List::operator>>(const List& val) const {
+const List List::operator>>(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -230,7 +230,7 @@ List List::operator>>(const List& val) const {
     return res;
 }
 
-List List::operator&&(const List& val) const {
+const List List::operator&&(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -240,7 +240,7 @@ List List::operator&&(const List& val) const {
     return res;
 }
 
-List List::operator||(const List& val) const {
+const List List::operator||(const List& val) const {
     List res(_size * val._size);
     for (size_t i = 0; i < _size; ++i) {
         for (size_t j = 0; j < val._size; ++j) {
@@ -316,7 +316,7 @@ bool List::operator>=(const List& val) const {
     return false;
 }
 
-List abs(const List& val) {
+const List abs(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = abs(val[i]);
@@ -324,7 +324,7 @@ List abs(const List& val) {
     return res;
 }
 
-List sqrt(const List& val) {
+const List sqrt(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = sqrt(val[i]);
@@ -332,7 +332,7 @@ List sqrt(const List& val) {
     return res;
 }
 
-List log2(const List& val) {
+const List log2(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = log2(val[i]);
@@ -340,7 +340,7 @@ List log2(const List& val) {
     return res;
 }
 
-List log10(const List& val) {
+const List log10(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = log10(val[i]);
@@ -348,7 +348,7 @@ List log10(const List& val) {
     return res;
 }
 
-List ln(const List& val) {
+const List ln(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = ln(val[i]);
@@ -356,7 +356,7 @@ List ln(const List& val) {
     return res;
 }
 
-List sin(const List& val) {
+const List sin(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = sin(val[i]);
@@ -364,7 +364,7 @@ List sin(const List& val) {
     return res;
 }
 
-List cos(const List& val) {
+const List cos(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = cos(val[i]);
@@ -372,7 +372,7 @@ List cos(const List& val) {
     return res;
 }
 
-List tg(const List& val) {
+const List tg(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = tg(val[i]);
@@ -380,7 +380,7 @@ List tg(const List& val) {
     return res;
 }
 
-List ctg(const List& val) {
+const List ctg(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = ctg(val[i]);
@@ -388,7 +388,7 @@ List ctg(const List& val) {
     return res;
 }
 
-List asin(const List& val) {
+const List asin(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = asin(val[i]);
@@ -396,7 +396,7 @@ List asin(const List& val) {
     return res;
 }
 
-List acos(const List& val) {
+const List acos(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = acos(val[i]);
@@ -404,7 +404,7 @@ List acos(const List& val) {
     return res;
 }
 
-List atg(const List& val) {
+const List atg(const List& val) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = atg(val[i]);
@@ -412,7 +412,7 @@ List atg(const List& val) {
     return res;
 }
 
-List pow(const List& val, const MathType& base) {
+const List pow(const List& val, const MathType& base) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = pow(val[i], base);
@@ -420,7 +420,7 @@ List pow(const List& val, const MathType& base) {
     return res;
 }
 
-List pow(const List& val, const List& base) {
+const List pow(const List& val, const List& base) {
     List res(val.size() * base.size());
     for (size_t i = 0; i < val.size(); ++i) {
         for (size_t j = 0; j < base.size(); ++j) {
@@ -430,7 +430,7 @@ List pow(const List& val, const List& base) {
     return res;
 }
 
-List log(const List& val, const MathType& base) {
+const List log(const List& val, const MathType& base) {
     List res(val.size());
     for (size_t i = 0; i < val.size(); ++i) {
         res._data[i] = log(val[i], base);
@@ -438,7 +438,7 @@ List log(const List& val, const MathType& base) {
     return res;
 }
 
-List log(const List& val, const List& base) {
+const List log(const List& val, const List& base) {
     List res(val.size() * base.size());
     for (size_t i = 0; i < val.size(); ++i) {
         for (size_t j = 0; j < base.size(); ++j) {
@@ -448,35 +448,35 @@ List log(const List& val, const List& base) {
     return res;
 }
 
-List sort(const List& val) {
+const List sort(const List& val) {
     List res(val.size());
     std::copy(val.begin(), val.end(), res.begin());
     std::sort(res.begin(), res.end());
     return res;
 }
 
-List unique(const List& val) {
+const List unique(const List& val) {
     List res(val.size());
     std::copy(val.begin(), val.end(), res.begin());
     res._size = std::unique(res.begin(), res.end()) - res.begin();
     return res;
 }
 
-List reverse(const List& val) {
+const List reverse(const List& val) {
     List res(val.size());
     std::copy(val.begin(), val.end(), res.begin());
     std::reverse(res.begin(), res.end());
     return res;
 }
 
-List join(const List& val, const MathType& add) {
+const List join(const List& val, const MathType& add) {
     List res(val.size() + 1);
     std::copy(val.begin(), val.end(), res.begin());
     res._data[val.size()] = add;
     return res;
 }
 
-List join(const List& val, const List& add) {
+const List join(const List& val, const List& add) {
     List res(val.size() + add.size());
     std::copy(val.begin(), val.end(), res.begin());
     std::copy(add.begin(), add.end(), res.begin() + val.size());

@@ -26,8 +26,8 @@ class Ratio {
     constexpr Ratio(Ratio&&) noexcept = default;
     ~Ratio() noexcept = default;
 
-    constexpr Ratio& operator=(const Ratio&) noexcept = default;
-    constexpr Ratio& operator=(Ratio&&) noexcept = default;
+    Ratio& operator=(const Ratio&) noexcept = default;
+    Ratio& operator=(Ratio&&) noexcept = default;
 
 
     constexpr Ratio(int64_t val) noexcept : x(val) {}

@@ -12,55 +12,55 @@ const std::wstring Double::getName() const {
 }
 
 
-Double sqrt(Double val) {
+const Double sqrt(const Double val) {
     return ::sqrt(val.getData());
 }
 
-Double log2(Double val) {
+const Double log2(const Double val) {
     return ::log2(val.getData());
 }
 
-Double log10(Double val) {
+const Double log10(const Double val) {
     return ::log10(val.getData());
 }
 
-Double ln(Double val) {
+const Double ln(const Double val) {
     return ::log(val.getData());
 }
 
-Double sin(Double val) noexcept {
+const Double sin(const Double val) noexcept {
     return ::sin(val.getData());
 }
 
-Double cos(Double val) noexcept {
+const Double cos(const Double val) noexcept {
     return ::cos(val.getData());
 }
 
-Double tg(Double val) noexcept {
+const Double tg(const Double val) noexcept {
     return ::tan(val.getData());
 }
 
-Double ctg(Double val) noexcept {
+const Double ctg(const Double val) noexcept {
     return 1.0 / ::tan(val.getData());
 }
 
-Double asin(Double val) {
+const Double asin(const Double val) {
     return ::asin(val.getData());
 }
 
-Double acos(Double val) {
+const Double acos(const Double val) {
     return ::acos(val.getData());
 }
 
-Double atg(Double val) {
+const Double atg(const Double val) {
     return ::atan(val.getData());
 }
 
-Double pow(Double val, Double base) noexcept {
+const Double pow(const Double val, const Double base) noexcept {
     return ::pow(val.getData(), base.getData());
 }
 
-Double log(Double val, Double base) {
+const Double log(const Double val, const Double base) {
     return ln(val) / ln(base);
 }
 

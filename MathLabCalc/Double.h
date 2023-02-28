@@ -2,6 +2,7 @@
 #include "begMathTypes.h"
 
 #include "Int.h"
+#include "Ratio.h"
 
 
 namespace calc {
@@ -18,17 +19,17 @@ class Double {
     constexpr Double(Double&&) noexcept = default;
     ~Double() noexcept = default;
 
-    constexpr Double& operator=(const Double&) noexcept = default;
-    constexpr Double& operator=(Double&&) noexcept = default;
+    Double& operator=(const Double&) noexcept = default;
+    Double& operator=(Double&&) noexcept = default;
 
 
-    constexpr Double(double data) noexcept : data(data) {}
-    constexpr Double(Int val) noexcept : data(val.getData()) {}
+    constexpr Double(const double data) noexcept : data(data) {}
+    constexpr Double(const Int val) noexcept : data(val.getData()) {}
 
 
     /// @brief Значение переменной в стандартных типах
     /// @return Значение переменной в стандартных типах
-    constexpr double getData() const noexcept {
+    constexpr const double getData() const noexcept {
         return data;
     }
 
@@ -43,72 +44,72 @@ class Double {
     const std::wstring getName() const;
 
 
-    constexpr Double operator+() const noexcept {
+    constexpr const Double operator+() const noexcept {
         return *this;
     }
-    constexpr Double operator-() const noexcept {
+    constexpr const Double operator-() const noexcept {
         return -data;
     }
 
 
-    constexpr Double operator+(Double val) const noexcept {
+    constexpr const Double operator+(const Double val) const noexcept {
         return data + val.data;
     }
-    constexpr Double operator-(Double val) const noexcept {
+    constexpr const Double operator-(const Double val) const noexcept {
         return data - val.data;
     }
-    constexpr Double operator*(Double val) const noexcept {
+    constexpr const Double operator*(const Double val) const noexcept {
         return data * val.data;
     }
-    constexpr Double operator/(Double val) const noexcept {
+    constexpr const Double operator/(const Double val) const noexcept {
         return data / val.data;
     }
 
 
-    constexpr bool operator==(Double val) const noexcept {
+    constexpr const bool operator==(const Double val) const noexcept {
         return data == val.data;
     }
-    constexpr bool operator!=(Double val) const noexcept {
+    constexpr const bool operator!=(const Double val) const noexcept {
         return data != val.data;
     }
-    constexpr bool operator<(Double val) const noexcept {
+    constexpr const bool operator<(const Double val) const noexcept {
         return data < val.data;
     }
-    constexpr bool operator<=(Double val) const noexcept {
+    constexpr const bool operator<=(const Double val) const noexcept {
         return data <= val.data;
     }
-    constexpr bool operator>(Double val) const noexcept {
+    constexpr const bool operator>(const Double val) const noexcept {
         return data > val.data;
     }
-    constexpr bool operator>=(Double val) const noexcept {
+    constexpr const bool operator>=(const Double val) const noexcept {
         return data >= val.data;
     }
 };
 
 
-constexpr Double abs(Double val) noexcept {
+constexpr const Double abs(const Double val) noexcept {
     return val >= 0 ? val : -val;
 }
 
-Double sqrt(Double val);
+const Double sqrt(const Double val);
 
 
-Double log2(Double val);
-Double log10(Double val);
-Double ln(Double val);
+const Double log2(const Double val);
+const Double log10(const Double val);
+const Double ln(const Double val);
 
 
-Double sin(Double val) noexcept;
-Double cos(Double val) noexcept;
-Double tg(Double val) noexcept;
-Double ctg(Double val) noexcept;
+const Double sin(const Double val) noexcept;
+const Double cos(const Double val) noexcept;
+const Double tg(const Double val) noexcept;
+const Double ctg(const Double val) noexcept;
 
-Double asin(Double val);
-Double acos(Double val);
-Double atg(Double val);
+const Double asin(const Double val);
+const Double acos(const Double val);
+const Double atg(const Double val);
 
 
-Double pow(Double val, Double base) noexcept;
-Double log(Double val, Double base);
+const Double pow(const Double val, const Double base) noexcept;
+const Double log(const Double val, const Double base);
 
 }  // namespace calc

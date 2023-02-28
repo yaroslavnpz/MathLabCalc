@@ -16,16 +16,16 @@ class Bool {
     constexpr Bool(Bool&&) noexcept = default;
     ~Bool() noexcept = default;
 
-    constexpr Bool& operator=(const Bool&) noexcept = default;
-    constexpr Bool& operator=(Bool&&) noexcept = default;
+    Bool& operator=(const Bool&) noexcept = default;
+    Bool& operator=(Bool&&) noexcept = default;
 
 
-    constexpr Bool(bool data) noexcept : data(data) {}
+    constexpr Bool(const bool data) noexcept : data(data) {}
 
 
     /// @brief Значение переменной в стандартных типах
     /// @return Значение переменной в стандартных типах
-    constexpr bool getData() const noexcept {
+    constexpr const bool getData() const noexcept {
         return data;
     }
 
@@ -40,40 +40,40 @@ class Bool {
     const std::wstring getName() const;
 
 
-    constexpr Bool operator!() const noexcept {
+    constexpr const Bool operator!() const noexcept {
         return !data;
     }
 
-    constexpr Bool operator+(Bool val) const noexcept {
+    constexpr const Bool operator+(const Bool val) const noexcept {
         return data + val.data;
     }
-    constexpr Bool operator*(Bool val) const noexcept {
+    constexpr const Bool operator*(const Bool val) const noexcept {
         return data * val.data;
     }
 
-    constexpr Bool operator||(Bool val) const noexcept {
+    constexpr const Bool operator||(const Bool val) const noexcept {
         return data || val.data;
     }
-    constexpr Bool operator&&(Bool val) const noexcept {
+    constexpr const Bool operator&&(const Bool val) const noexcept {
         return data && val.data;
     }
 
-    constexpr bool operator==(Bool val) const noexcept {
+    constexpr const bool operator==(const Bool val) const noexcept {
         return data == val.data;
     }
-    constexpr bool operator!=(Bool val) const noexcept {
+    constexpr const bool operator!=(const Bool val) const noexcept {
         return data != val.data;
     }
-    constexpr bool operator<(Bool val) const noexcept {
+    constexpr const bool operator<(const Bool val) const noexcept {
         return data < val.data;
     }
-    constexpr bool operator<=(Bool val) const noexcept {
+    constexpr const bool operator<=(const Bool val) const noexcept {
         return data <= val.data;
     }
-    constexpr bool operator>(Bool val) const noexcept {
+    constexpr const bool operator>(const Bool val) const noexcept {
         return data > val.data;
     }
-    constexpr bool operator>=(Bool val) const noexcept {
+    constexpr const bool operator>=(const Bool val) const noexcept {
         return data >= val.data;
     }
 };
