@@ -12,10 +12,13 @@ class Set {
     std::set<MathType> _data;
 
    public:
-    Set() = default;
-    Set(const Set&) = default;
+    Set() noexcept =default;
+    Set(const Set& val) = default;
     Set(Set&&) noexcept = default;
-    ~Set() noexcept = default;
+    ~Set() noexcept =default;
+
+    Set& operator=(const Set&) = default;
+    Set& operator=(Set&&) noexcept = default;
 
 
     Set(const std::initializer_list<MathType>& val);
@@ -35,13 +38,17 @@ class Set {
     void clear();
 
 
-    constexpr size_t size() const noexcept {
+    void insert(const MathType& val) {
+        _data.insert(val);
+    }
+
+
+    size_t size() const noexcept {
         return _data.size();
     }
 
     const Set operator+() const;
     const Set operator-() const;
-    const Set operator!() const;
     const Set operator~() const;
 
     const Set operator+(const Set& val) const;

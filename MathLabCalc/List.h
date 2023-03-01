@@ -59,7 +59,7 @@ class List {
 
 
     const MathType operator[](Int val) const;
-    const const List operator[](const List& val) const;
+    const List operator[](const List& val) const;
 
 
     const List operator+() const;

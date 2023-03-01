@@ -29,7 +29,7 @@
       <Filter>MathTypes\Complex</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Set.cpp">
-      <Filter>Set</Filter>
+      <Filter>MathTypes\Set</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,13 +65,10 @@
       <Filter>MathTypes\Complex</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Set.h">
-      <Filter>Set</Filter>
+      <Filter>MathTypes\Set</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Set">
-      <UniqueIdentifier>{fedd5c13-c1b0-41d5-b4c2-fccf9ae4a8e2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Stack">
       <UniqueIdentifier>{b7d9b081-ec53-40f0-8bd3-f5eb13bdf16c}</UniqueIdentifier>
     </Filter>
@@ -101,6 +98,9 @@
     </Filter>
     <Filter Include="MathTypes\Double">
       <UniqueIdentifier>{2276efb6-b1f5-4283-a04a-b262c50a1100}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\Set">
+      <UniqueIdentifier>{fedd5c13-c1b0-41d5-b4c2-fccf9ae4a8e2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

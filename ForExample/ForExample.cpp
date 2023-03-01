@@ -14,10 +14,15 @@ int main() {
     complex<double> c = 1;
     cout << sin(c) << '\n';
 
-    a = Seg(2, 3);
-    b = List({1, 2, 3, 4});
+    Set x = MathType();
+    Set y = x;
 
+    //a = Seg(2, 3);
+    //b = List({1, 2, 3, 4});
 
+    std::variant<MATHTYPESLIST> data;
+    std::variant<MATHTYPESLIST> buf;
+    data = buf;
 
     
     try {

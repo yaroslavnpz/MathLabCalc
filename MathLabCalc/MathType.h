@@ -10,12 +10,13 @@
 #include "List.h"
 #include "Ratio.h"
 #include "Seg.h"
+#include "Set.h"
 
 
 namespace calc {
 
 
-#define MATHTYPESLIST Bool, Int, Ratio, Double, List, Seg
+#define MATHTYPESLIST Bool, Int, Ratio, Double, List, Seg, Set
 
 
 class MathType {
@@ -42,6 +43,7 @@ class MathType {
     MathType(Double val) noexcept : data(val) {}
     MathType(const List& val) noexcept : data(val) {}
     MathType(const Seg& val) noexcept : data(val) {}
+    MathType(const Set& val) noexcept : data(val) {}
 
 
     const std::wstring getType() const;
