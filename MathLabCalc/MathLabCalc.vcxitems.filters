@@ -28,6 +28,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Complex.cpp">
       <Filter>MathTypes\Complex</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Set.cpp">
+      <Filter>Set</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)exceptions.h" />
