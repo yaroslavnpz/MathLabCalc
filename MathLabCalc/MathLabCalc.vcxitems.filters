@@ -67,6 +67,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Set.h">
       <Filter>MathTypes\Set</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Stack">
@@ -101,6 +104,9 @@
     </Filter>
     <Filter Include="MathTypes\Set">
       <UniqueIdentifier>{fedd5c13-c1b0-41d5-b4c2-fccf9ae4a8e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entity">
+      <UniqueIdentifier>{535845e4-3df6-4407-95d7-767d4186782e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

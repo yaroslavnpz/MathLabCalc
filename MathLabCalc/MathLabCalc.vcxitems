@@ -18,6 +18,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Bool.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Complex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Double.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)exceptions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Int.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)List.h" />
