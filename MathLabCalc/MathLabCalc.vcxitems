@@ -32,6 +32,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Bool.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Complex.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Double.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Int.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)List.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MathType.cpp" />

@@ -30,9 +30,7 @@ MathType Stack::localVar(size_t iter) const {
 }
 
 void Stack::breakFunction() {
-    auto buf = data.back();
     data.resize(pointers.back());
-    data.push_back(buf);
     pointers.pop_back();
 }
 

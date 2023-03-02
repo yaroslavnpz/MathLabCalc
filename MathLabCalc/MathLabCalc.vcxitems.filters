@@ -31,6 +31,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Set.cpp">
       <Filter>MathTypes\Set</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)exceptions.h" />
