@@ -1,5 +1,6 @@
 #pragma once
 #include "begMathTypes.h"
+#include "InitList.h"
 
 
 #include <memory>
@@ -32,6 +33,7 @@ class List {
     List(Double val);
     List(const Ratio& val);
     List(const Seg& val);
+    List(const InitList& val);
 
 
     const std::wstring getType() const;

@@ -14,6 +14,7 @@ class List;
 class Set;
 class Seg;
 class Point;
+class InitList;
 
 
 class MathType;

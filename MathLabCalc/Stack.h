@@ -24,44 +24,74 @@ class Stack {
     Stack& operator=(Stack&&) noexcept = default;
 
 
-    /// @brief Функция для добавления элемента в стек
-    /// @param val Добавляемый в стек элемент
-    void push(MathType val);
+    const MathType operator[](const size_t i) const {
+        return data[i];
+    }
+    MathType& operator[](const size_t i) {
+        return data[i];
+    }
+
+
+    /// @brief Функция для добавления одного элемента в конец стека
+    /// @param val Значение, добовляемое в стек
+    void push(const MathType val) {
+        data.push_back(val);
+    }
 
 
     /// @brief Удаление последнего элемента из стека
-    void pop();
-
-
-    /// @brief Последний элемент в стеке
-    /// @return Последний элемент в стеке
-    MathType back() const;
+    void pop() {
+        data.pop_back();
+    }
 
 
     /// @brief Удаление последнего элемента из стека
+    /// @return Значение последнего (удаленного) элемента
+    const MathType popBack() {
+        auto buf = data.back();
+        data.pop_back();
+        return buf;
+    }
+
+
+    /// @brief Значение последнего элемента
     /// @return Значение последнего элемента
-    MathType popBack();
+    const MathType back() const {
+        return data.back();
+    }
+    /// @brief Значение последнего элемента
+    /// @return Значение последнего элемента
+    MathType& back() {
+        return data.back();
+    }
 
 
-    /// @brief Нахождение глобальной переменной в стеке
-    /// @param iter Индекс переменной
-    /// @return Значение переменной в стеке
-    MathType globalVar(size_t iter) const;
+    /// @brief Спец функция для обращения к аргументам (локальным переменным)
+    /// @param iter Индекс аргумента
+    /// @return Значение переменной
+    const MathType localVariable(const size_t iter) const {
+        return data[pointers.back() + iter];
+    }
 
 
-    /// @brief Нахождение локальной переменной, или аргумента функции в стеке
-    /// @param iter Индекс переменной
-    /// @return Значение аргумента функции
-    MathType localVar(size_t iter) const;
+    /// @brief Спец функция для обращения к глобальным переменным
+    /// @param iter Индес переменной
+    /// @return Значение переменной
+    const MathType globalVariable(const size_t iter) const {
+        return data[iter];
+    }
 
 
-    /// @brief Завершает выполнение функции, удаляя все аргументы и т.п.
-    void breakFunction();
+    /// @brief Спец функция для обращения к аргументам (локальным переменным)
+    /// @param iter Индекс аргумента
+    /// @return Значение переменной
+    MathType& localVariable(const size_t iter);
 
 
-    /// @brief Вызов функции
-    /// @param cnt_args количество аргументов функции
-    void callFunction(size_t cnt_args);
+    /// @brief Спец функция для обращения к глобальным переменным
+    /// @param iter Индес переменной
+    /// @return Значение переменной
+    MathType& globalVariable(const size_t iter);
 };
 
 }  // namespace calc

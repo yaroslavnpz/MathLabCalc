@@ -11,12 +11,13 @@
 #include "Ratio.h"
 #include "Seg.h"
 #include "Set.h"
+#include "InitList.h"
 
 
 namespace calc {
 
 
-#define MATHTYPESLIST Bool, Int, Ratio, Double, List, Seg, Set
+#define MATHTYPESLIST Bool, Int, Ratio, Double, List, Seg, Set, InitList
 
 
 class MathType {

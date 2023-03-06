@@ -22,17 +22,14 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Seg.cpp">
       <Filter>MathTypes\Seg</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Stack.cpp">
-      <Filter>Stack</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Complex.cpp">
       <Filter>MathTypes\Complex</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Set.cpp">
       <Filter>MathTypes\Set</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp">
-      <Filter>Entity</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)InitList.cpp">
+      <Filter>MathTypes\InitList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,9 +58,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)begMathTypes.h">
       <Filter>MathTypes</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Stack.h">
-      <Filter>Stack</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Complex.h">
       <Filter>MathTypes\Complex</Filter>
     </ClInclude>
@@ -72,6 +66,21 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h">
       <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)EntityOperand.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)EntityOperator.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)EntityFunction.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Stack.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)InitList.h">
+      <Filter>MathTypes\InitList</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +119,9 @@
     </Filter>
     <Filter Include="Entity">
       <UniqueIdentifier>{535845e4-3df6-4407-95d7-767d4186782e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\InitList">
+      <UniqueIdentifier>{2c5cabc0-21d4-461f-acaa-ba6bf1c7763b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

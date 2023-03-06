@@ -14,9 +14,9 @@ class Complex {
     std::complex<double> data = 0;
 
     public:
-    Complex() noexcept = default;
-    Complex(const Complex&) noexcept = default;
-    Complex(Complex&&) noexcept = default;
+    constexpr Complex() noexcept = default;
+    constexpr Complex(const Complex&) noexcept = default;
+    constexpr Complex(Complex&&) noexcept = default;
     ~Complex() noexcept = default;
 
     Complex(const std::complex<double>& val) noexcept;

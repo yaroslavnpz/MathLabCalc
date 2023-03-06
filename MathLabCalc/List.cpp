@@ -39,18 +39,23 @@ List::List(const Seg& val) : _data(new MathType[1]), _size(1) {
     _data[0] = val;
 }
 
+List::List(const InitList& val) : _size(val.data->size()), _data(new MathType[val.data->size()]) {
+    for (size_t i = 0; i < _size; ++i)
+        _data[i] = val.data->operator[](i);
+}
+
 const std::wstring List::getType() const {
     return L"List";
 }
 
 const std::wstring List::getName() const {
     std::wstringstream stream;
-    stream << L"{";
+    stream << L"(";
     for (size_t i = 0; i + 1 < size(); ++i)
         stream << _data[i].getName() << L", ";
     if (size() != 0)
         stream << _data[size() - 1].getName();
-    stream << L"}";
+    stream << L")";
     return stream.str();
 }
 

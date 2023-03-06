@@ -9,25 +9,17 @@ using namespace calc;
 
 
 int main() {
-    MathType a, b;
+    InitList a;
+    a = makeInitList(Int(1), Int(2));
+    a = makeInitList(a, Int(3));
 
-    complex<double> c = 1;
-    cout << sin(c) << '\n';
 
-    Set x = MathType();
-    Set y = x;
+    MathType x, y;
+    x = y;
 
-    //a = Seg(2, 3);
-    //b = List({1, 2, 3, 4});
 
-    std::variant<MATHTYPESLIST> data;
-    std::variant<MATHTYPESLIST> buf;
-    data = buf;
+    List b = a;
 
-    
-    try {
-        wcout << (a + b).getName();
-    } catch (const exception& ex) {
-        cout << ex.what() << '\n';
-    }
+
+    wcout << b.getName() << '\n';
 }
