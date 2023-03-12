@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="MathTypes">
+      <UniqueIdentifier>{929a0d38-e000-41b4-b3e0-b3394e5ea274}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\Int">
+      <UniqueIdentifier>{fbb2c689-627d-4938-9fa4-59da9a7c92b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\Bool">
+      <UniqueIdentifier>{6c2603b1-5f42-4d5a-9bd4-9e6fbf132f03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\Double">
+      <UniqueIdentifier>{3317e40e-7579-455c-9fda-cbbcbaed8585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\Complex">
+      <UniqueIdentifier>{9e0dc1e3-418d-4ba3-b2d0-95d85807d041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\InitList">
+      <UniqueIdentifier>{f9122ffe-a872-4435-a4d9-05a9e7f85100}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\List">
+      <UniqueIdentifier>{d51d03e4-ba62-4b95-a3a9-7dd819c5f89c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathTypes\Point">
+      <UniqueIdentifier>{ba00b797-12c0-447f-9338-05b6b439fa6b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)begMathTypes.h">
+      <Filter>MathTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Int.h">
+      <Filter>MathTypes\Int</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Bool.h">
+      <Filter>MathTypes\Bool</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Double.h">
+      <Filter>MathTypes\Double</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Complex.h">
+      <Filter>MathTypes\Complex</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)InitList.h">
+      <Filter>MathTypes\InitList</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)List.h">
+      <Filter>MathTypes\List</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Point.h">
+      <Filter>MathTypes\Point</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

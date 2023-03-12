@@ -1,5 +1,13 @@
 #include <iostream>
+#include <algorithm>
 
-int main() {
-    std::cout << "Hello World!\n";
-}
+using namespace std;
+
+
+#include "Int.h"
+#include "Double.h"
+using namespace calc;
+
+
+
+int main() {}
