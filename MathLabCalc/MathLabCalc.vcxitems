@@ -23,4 +23,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)List.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Point.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Bool.inl" />
+    <None Include="$(MSBuildThisFileDirectory)Complex.inl" />
+  </ItemGroup>
 </Project>

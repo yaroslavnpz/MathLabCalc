@@ -16,7 +16,7 @@ class Bool {
     ~Bool() noexcept = default;
 
 
-    constexpr Bool(const bool data);
+    constexpr Bool(const bool data) noexcept;
 
 
     Bool& operator=(const Bool&) noexcept = default;
@@ -47,3 +47,6 @@ class Bool {
     friend constexpr bool operator>=(const Bool a, const Bool b) noexcept;
 };
 }  // namespace calc
+
+
+#include "Bool.inl"

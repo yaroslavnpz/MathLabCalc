@@ -39,10 +39,10 @@ class Complex {
     friend constexpr Complex operator-(Complex val) noexcept;
 
 
-    friend constexpr Complex operator+(Complex a, const Complex& b) noexcept;
-    friend constexpr Complex operator-(Complex a, const Complex& b) noexcept;
-    friend constexpr Complex operator*(Complex a, const Complex& b) noexcept;
-    friend constexpr Complex operator/(Complex a, const Complex& b) noexcept;
+    friend constexpr Complex operator+(const Complex& a, const Complex& b) noexcept;
+    friend constexpr Complex operator-(const Complex& a, const Complex& b) noexcept;
+    friend constexpr Complex operator*(const Complex& a, const Complex& b) noexcept;
+    friend constexpr Complex operator/(const Complex& a, const Complex& b) noexcept;
 
 
     friend constexpr bool operator==(const Complex& a, const Complex& b) noexcept;

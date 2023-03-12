@@ -52,4 +52,12 @@
       <Filter>MathTypes\Point</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Bool.inl">
+      <Filter>MathTypes\Bool</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Complex.inl">
+      <Filter>MathTypes\Complex</Filter>
+    </None>
+  </ItemGroup>
 </Project>
